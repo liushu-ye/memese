@@ -71,19 +71,22 @@ app/src/main/assets/memes.json   App（三级缓存）
 
 ### 启用自动同步
 
-1. 把工程推到 GitHub
-2. Settings → Secrets and variables → Actions
+`ENDPOINT` 已指向本仓库，只需在 GitHub 上配好密钥：
+
+1. Settings → Secrets and variables → Actions
    - **Secrets**：`FEISHU_APP_ID`、`FEISHU_APP_SECRET`
    - **Variables**：`MEME_TABLE_URL`（你的多维表格分享链接）
-3. 改 `app/src/main/java/com/example/memecard/data/MemeRepository.kt` 里的 `ENDPOINT`：
+2. 到 Actions 页手动跑一次 `Sync memes from Feishu`，确认能拿到数据
 
 ```kotlin
+// app/src/main/java/com/example/memecard/data/MemeRepository.kt
 private const val ENDPOINT =
-    "https://cdn.jsdelivr.net/gh/你的用户名/你的仓库@main/data/memes.json"
+    "https://cdn.jsdelivr.net/gh/liushu-ye/memese@main/data/memes.json"
 ```
 
-> 保持 `OWNER/REPO` 原样时，App **不会发起任何网络请求**，只用内置数据。
-> 这样对只想改数据、不想接同步的人也是安全的默认值。
+> 换成你自己的仓库时，把 `liushu-ye/memese` 替换掉即可。
+> 若把它改回含 `OWNER/REPO` 的占位符，`syncConfigured` 会变为 false，
+> App **不发起任何网络请求**，只用内置数据 —— 给不想接同步的人一个安全默认值。
 
 **为什么密钥不在 App 里**：`App Secret` 一旦打包进 APK 就等于公开，
 而它代表应用身份。所以密钥只存在于 GitHub 加密 Secrets，

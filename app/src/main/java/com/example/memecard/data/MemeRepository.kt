@@ -25,11 +25,11 @@ object MemeRepository {
      * 数据源。由 GitHub Actions 定时把飞书表格同步回仓库，
      * App 从这里读一个纯静态 JSON —— 不需要任何 token。
      *
-     * 把 OWNER/REPO 换成你自己的仓库即可启用同步；
-     * 保持原样则 App 只用 assets 内置数据，不发起任何网络请求。
+     * 仓库：https://github.com/liushu-ye/memese
+     * 同步产物：data/memes.json（由 .github/workflows/sync-memes.yml 每 6 小时更新）
      */
     private const val ENDPOINT =
-        "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/data/memes.json"
+        "https://cdn.jsdelivr.net/gh/liushu-ye/memese@main/data/memes.json"
 
     private const val ASSET_NAME = "memes.json"
     private const val CACHE_NAME = "memes.json"
