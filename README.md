@@ -1,16 +1,17 @@
-# 梗学外语（memecard）
+# 梗学外语（memese）
 
 打开就随机出一个网络梗，下面给出你选定的语言翻译。用「梗」当记忆钩子学外语。
 
 - 主页：一个梗 + 翻译，底部一个「换一个」按钮
 - 设置：可多选中文 / English / 日本語，选几种就显示几种
+- 反馈：顶栏信封图标，可一键复制 QQ 群号
 - 数据：飞书多维表格 → 自动同步到仓库 → App 读取
 
 ## 界面
 
 ```
 ┌─────────────────────────────┐
-│  梗学外语              ⚙️   │
+│  梗学外语         ✉️   ⚙️   │
 ├─────────────────────────────┤
 │                             │
 │  ┌───────────────────────┐  │
@@ -29,6 +30,15 @@
 ```
 
 **翻译全部取消勾选**时只显示梗 —— 可以当作自测模式，想不起来再打开设置。
+
+## 图标
+
+白色「梗」字 + 粉红底（`#EC407A`）的自适应图标。
+
+图标是用**无头浏览器渲染系统字体**生成的，不是手绘矢量 —— 一个复杂汉字手写路径不现实。
+生成流程和踩到的坑（透明底缩放会脏边、自适应图标安全区）都记在
+[`tools/icon/README.md`](tools/icon/README.md)，想换字换色照着走即可。
+
 
 ## 构建
 
@@ -108,7 +118,7 @@ cp data/memes.json app/src/main/assets/memes.json
 ## 目录结构
 
 ```
-memecard/
+memese/
 ├── app/src/main/
 │   ├── assets/memes.json              内置兜底数据
 │   ├── java/com/example/memecard/
@@ -122,13 +132,18 @@ memecard/
 │   │       ├── MemeApp.kt             状态持有者
 │   │       ├── HomeScreen.kt          主页
 │   │       ├── SettingsSheet.kt       设置底部弹窗
-│   │       ├── Theme.kt               Material 3 主题
+│   │       ├── FeedbackDialog.kt      反馈弹窗（QQ 群）
+│   │       ├── Theme.kt               Material 3 主题（品牌粉 #EC407A）
 │   │       └── Labels.kt              语言显示名
-│   └── res/                           图标、主题、文案
+│   └── res/mipmap-*dpi/               自适应图标（5 个密度）
 ├── data/memes.json                    数据源（CI 更新）
 ├── tools/feishu-tool/                 飞书导出工具（零依赖）
+├── tools/icon/                        图标生成工具（见其 README）
 └── .github/workflows/sync-memes.yml   定时同步
 ```
+
+> 注：本地目录名和 Android 包名仍是 `memecard`，仓库名是 `memese`。
+> 有历史原因（工程先于仓库命名），改包名要动一批 import，暂时没动。
 
 ## 技术选型
 

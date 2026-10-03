@@ -24,3 +24,7 @@ node_modules/
 # 密钥 —— 万一有人把 .env 放进来的兜底
 *.keystore
 *.jks
+
+# 本地临时产物：无头浏览器 profile、图标母版（可由 tools/icon/glyph.html 重新生成）
+.chrome-tmp/
+master.png

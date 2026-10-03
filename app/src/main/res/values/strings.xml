@@ -4,6 +4,15 @@
 
     <string name="action_settings">设置</string>
     <string name="action_refresh">换一个</string>
+    <string name="action_feedback">反馈与建议</string>
+
+    <string name="feedback_title">反馈与建议</string>
+    <string name="feedback_message">有想要添加的功能、遇到的问题，或者任何优化建议，都欢迎告诉我们。\n\n也可以直接加入 QQ 群一起聊：</string>
+    <string name="feedback_qq">QQ 搜索 535391647 加入群聊</string>
+    <string name="feedback_qq_number">535391647</string>
+    <string name="feedback_copy">复制群号</string>
+    <string name="feedback_copied">群号已复制</string>
+    <string name="feedback_close">关闭</string>
 
     <string name="settings_title">显示语言</string>
     <string name="settings_hint">可多选。选中的语言会显示在梗的下方；全部取消则只显示梗，当作自测。</string>

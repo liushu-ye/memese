@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="window_background">#FFFBFE</color>
-    <color name="ic_launcher_background">#1B6FB5</color>
+    <color name="window_background">#FFFFFBFF</color>
+    <!-- 图标背景：粉红。与 Theme.kt 里的 primary 保持一致 -->
+    <color name="ic_launcher_background">#FFEC407A</color>
 </resources>

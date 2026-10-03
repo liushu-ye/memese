@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /* 全部尺寸用 vmin 表达，这样同一份 HTML 可以在任意方形视口下等比渲染。
+     108mdpi / 162hdpi / 216xhdpi / 324xxhdpi / 432xxxhdpi 都用它。 */
+  html, body {
+    margin: 0; padding: 0;
+    width: 100vmin; height: 100vmin;
+    background: transparent;
+    overflow: hidden;
+  }
+  .wrap {
+    width: 100vmin; height: 100vmin;
+    display: flex; align-items: center; justify-content: center;
+    /* CJK 字形视觉重心偏下，用 padding 抵消（数值由 _png_inspect 实测校准：
+       432px 下 20px => 4.63vmin） */
+    padding-bottom: 4.63vmin;
+    box-sizing: border-box;
+  }
+  .glyph {
+    font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "PingFang SC",
+                 "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+    font-weight: 700;
+    /* 目标字形方框 ≈ 52dp：213 / 432 = 49.31% */
+    font-size: 49.31vmin;
+    line-height: 1;
+    color: #FFFFFF;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap"><span class="glyph">梗</span></div>
+</body>
+</html>

@@ -30,6 +30,7 @@ fun MemeApp() {
     var current by remember { mutableStateOf<Meme?>(null) }
     var enabledLangs by remember { mutableStateOf(prefs.enabledLangs) }
     var showSettings by remember { mutableStateOf(false) }
+    var showFeedback by remember { mutableStateOf(false) }
 
     fun pickNext(list: List<Meme>) {
         if (list.isEmpty()) {
@@ -59,6 +60,7 @@ fun MemeApp() {
         enabledLangs = enabledLangs,
         onRefresh = { pickNext(memes) },
         onOpenSettings = { showSettings = true },
+        onOpenFeedback = { showFeedback = true },
     )
 
     if (showSettings) {
@@ -72,5 +74,9 @@ fun MemeApp() {
             },
             onDismiss = { showSettings = false },
         )
+    }
+
+    if (showFeedback) {
+        FeedbackDialog(onDismiss = { showFeedback = false })
     }
 }
