@@ -1,0 +1,67 @@
+name: Sync memes from Feishu
+
+# 你只管在飞书多维表格里填数据，这个工作流负责把表同步成仓库里的 JSON。
+#
+# 需要先配置（Settings → Secrets and variables → Actions）：
+#   Secrets:   FEISHU_APP_ID / FEISHU_APP_SECRET    ← 从飞书开发者后台拿
+#   Variables: MEME_TABLE_URL                       ← 你的多维表格分享链接
+#
+# 密钥只存在于 GitHub 加密 Secrets 里，绝不会出现在代码或 App 中。
+
+on:
+  schedule:
+    # 每 6 小时。想更实时可改成 '*/15 * * * *'（GitHub 定时任务可能有几分钟延迟）
+    - cron: '0 */6 * * *'
+  workflow_dispatch:        # 也支持手动点一下立即同步
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-memes
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # feishu-tool 是零依赖的，直接跑，不需要 npm install
+      - name: 从飞书导出表格
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          TABLE_URL: ${{ vars.MEME_TABLE_URL }}
+        run: |
+          if [ -z "$TABLE_URL" ]; then
+            echo "::error::没有配置 MEME_TABLE_URL 变量"
+            exit 1
+          fi
+          node tools/feishu-tool/bin/feishu.mjs export \
+            --url "$TABLE_URL" \
+            --sort-by ID \
+            --out data/memes.json
+
+      # 同步一份到 assets，让「内置兜底数据」也保持最新
+      - name: 更新内置兜底数据
+        run: cp data/memes.json app/src/main/assets/memes.json
+
+      - name: 有变化才提交
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- data/memes.json app/src/main/assets/memes.json; then
+            echo "表格没有变化，跳过提交"
+            exit 0
+          fi
+
+          COUNT=$(node -e "console.log(require('./data/memes.json').length)")
+          git add data/memes.json app/src/main/assets/memes.json
+          git commit -m "chore(data): sync ${COUNT} memes from Feishu table"
+          git push

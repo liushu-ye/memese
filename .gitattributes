@@ -1,0 +1,22 @@
+# 统一换行符，避免 Windows 提交后别人在 Linux/macOS 克隆时出问题
+* text=auto eol=lf
+
+# Windows 批处理必须是 CRLF
+*.bat text eol=crlf
+
+# shell 脚本必须是 LF，否则报 "bad interpreter"
+gradlew text eol=lf
+
+# 二进制文件不要做换行转换
+*.jar binary
+*.apk binary
+*.aab binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ttf binary
+*.so binary
+
+# 锁文件在 diff 里没意义，但保留可读性
+package-lock.json linguist-generated=true

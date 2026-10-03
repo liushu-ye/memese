@@ -1,0 +1,28 @@
+{
+  "name": "feishu-tool",
+  "version": "1.0.0",
+  "description": "飞书开放平台 CLI + MCP Server（消息 / 通讯录 / 多维表格）",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "bin": {
+    "feishu": "./bin/feishu.mjs",
+    "feishu-mcp": "./bin/feishu-mcp.mjs"
+  },
+  "scripts": {
+    "test": "node test/unit.test.mjs && node test/mcp.test.mjs",
+    "test:unit": "node test/unit.test.mjs",
+    "test:mcp": "node test/mcp.test.mjs",
+    "test:stdio": "node test/mcp.stdio.test.mjs",
+    "test:proxy": "node test/proxy.test.mjs",
+    "test:dsh-config": "node test/verify-dsh-config.mjs",
+    "list": "node bin/feishu.mjs list",
+    "help": "node bin/feishu.mjs help",
+    "mcp": "node bin/feishu-mcp.mjs",
+    "mcp:tools": "node bin/feishu-mcp.mjs --list",
+    "serve": "node bin/feishu.mjs serve --config serve.json"
+  }
+}

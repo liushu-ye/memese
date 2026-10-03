@@ -1,0 +1,402 @@
+[
+  {
+    "record_id": "recvwoAyibpmwb",
+    "ID": "1",
+    "中文": "永远的神",
+    "日语": "永遠の神",
+    "梗": "YYDS",
+    "英语": "The Eternal God"
+  },
+  {
+    "record_id": "recvwoITLxNepd",
+    "ID": "2",
+    "中文": "啊我死了（拼音缩写），形容可爱或美好到让人受不了",
+    "日语": "ああ、死んだ（可愛すぎて）",
+    "梗": "AWSL",
+    "英语": "Ah, I'm dead — too cute to handle"
+  },
+  {
+    "record_id": "recvwoITLxo59P",
+    "ID": "3",
+    "中文": "笑死我了（拼音缩写），形容极度好笑",
+    "日语": "笑い死ぬ",
+    "梗": "xswl",
+    "英语": "LMAO — laughing to death"
+  },
+  {
+    "record_id": "recvwoITLxZAxk",
+    "ID": "4",
+    "中文": "溜溜溜，称赞厉害、精彩",
+    "日语": "すごい！お見事！",
+    "梗": "666",
+    "英语": "Awesome! Nice one!"
+  },
+  {
+    "record_id": "recvwoITLxcxhE",
+    "ID": "5",
+    "中文": "源自猫扑表情编号，表示大笑",
+    "日语": "大笑い",
+    "梗": "233",
+    "英语": "Haha / LOL"
+  },
+  {
+    "record_id": "recvwoITLxLXol",
+    "ID": "6",
+    "中文": "心理防线被击破，情绪失控",
+    "日语": "メンタルがやられる",
+    "梗": "破防",
+    "英语": "Defenses broken; emotionally overwhelmed"
+  },
+  {
+    "record_id": "recvwoITLxplB6",
+    "ID": "7",
+    "中文": "拒绝内卷，用最低欲望的方式生活",
+    "日语": "寝そべり族",
+    "梗": "躺平",
+    "英语": "Lying flat"
+  },
+  {
+    "record_id": "recvwoITLxRePD",
+    "ID": "8",
+    "中文": "同行之间过度的内部竞争",
+    "日语": "インボリューション（過当競争）",
+    "梗": "内卷",
+    "英语": "Involution"
+  },
+  {
+    "record_id": "recvwoITLxrUpp",
+    "ID": "9",
+    "中文": "社会性死亡，当众极度尴尬",
+    "日语": "社会的死亡",
+    "梗": "社死",
+    "英语": "Social death"
+  },
+  {
+    "record_id": "recvwoITLxnOoS",
+    "ID": "10",
+    "中文": "情绪低落、伤感",
+    "日语": "情緒不安定",
+    "梗": "emo",
+    "英语": "Feeling emo / down"
+  },
+  {
+    "record_id": "recvwoITLxqmCY",
+    "ID": "11",
+    "中文": "「绷不住了」的谐音，忍不住笑或哭",
+    "日语": "堪えきれない",
+    "梗": "蚌埠住了",
+    "英语": "Can't hold it together"
+  },
+  {
+    "record_id": "recvwoITLxwkMv",
+    "ID": "12",
+    "中文": "阴险狡猾、专搞偷袭的人",
+    "日语": "卑怯者",
+    "梗": "老六",
+    "英语": "Sneaky camper; sly player"
+  },
+  {
+    "record_id": "recvwoITLx2j7P",
+    "ID": "13",
+    "中文": "「多损」的谐音，太缺德了",
+    "日语": "意地悪すぎ",
+    "梗": "夺笋",
+    "英语": "How mean of you"
+  },
+  {
+    "record_id": "recvwoITLx8KS6",
+    "ID": "14",
+    "中文": "吃饭，尤其指吃得香",
+    "日语": "飯を食う",
+    "梗": "干饭",
+    "英语": "Chow down"
+  },
+  {
+    "record_id": "recvwoITLxQJki",
+    "ID": "15",
+    "中文": "上班族的自嘲称呼",
+    "日语": "サラリーマン",
+    "梗": "打工人",
+    "英语": "Wage earner / office drone"
+  },
+  {
+    "record_id": "recvwoITLx3Kdd",
+    "ID": "16",
+    "中文": "新一代年轻人",
+    "日语": "後浪（新世代）",
+    "梗": "后浪",
+    "英语": "The rising generation"
+  },
+  {
+    "record_id": "recvwoITLxkZwK",
+    "ID": "17",
+    "中文": "用抱怨的口吻炫耀",
+    "日语": "ベルサイユ文学（謙遜アピール）",
+    "梗": "凡尔赛",
+    "英语": "Humblebrag"
+  },
+  {
+    "record_id": "recvwoITLx19vQ",
+    "ID": "18",
+    "中文": "爱嫉妒、见不得别人好的人",
+    "日语": "レモン人間（嫉妬深い人）",
+    "梗": "柠檬精",
+    "英语": "Sour grapes; green with envy"
+  },
+  {
+    "record_id": "recvwoITLxwSZv",
+    "ID": "19",
+    "中文": "心态崩了，受不了了",
+    "日语": "心が砕けた",
+    "梗": "我裂开了",
+    "英语": "I'm falling apart"
+  },
+  {
+    "record_id": "recvwoITLx1JUX",
+    "ID": "20",
+    "中文": "「爷的青春回来了」，熟悉的事物重新出现",
+    "日语": "俺の青春が戻った",
+    "梗": "爷青回",
+    "英语": "My youth is back"
+  },
+  {
+    "record_id": "recvwoITLx6T2s",
+    "ID": "21",
+    "中文": "「爷的青春结束了」，青春落幕",
+    "日语": "俺の青春が終わった",
+    "梗": "爷青结",
+    "英语": "My youth is over"
+  },
+  {
+    "record_id": "recvwoITLxGn4K",
+    "ID": "22",
+    "中文": "自作多情，最后尴尬的是自己",
+    "日语": "ピエロは自分だった",
+    "梗": "小丑竟是我自己",
+    "英语": "The clown is me"
+  },
+  {
+    "record_id": "recvwoITLxejg4",
+    "ID": "23",
+    "中文": "不按规矩出牌，搞偷袭",
+    "日语": "武徳をわきまえない",
+    "梗": "不讲武德",
+    "英语": "No martial ethics; unfair play"
+  },
+  {
+    "record_id": "recvwoITLxs4SY",
+    "ID": "24",
+    "中文": "「好自为之」的谐音",
+    "日语": "好自為之（自業自得）",
+    "梗": "耗子尾汁",
+    "英语": "Take care of yourself; you reap what you sow"
+  },
+  {
+    "record_id": "recvwoITLxy2GY",
+    "ID": "25",
+    "中文": "「thank you」的谐音，表示无奈无语",
+    "日语": "サンキュー（呆れ）",
+    "梗": "栓Q",
+    "英语": "\"Thank you\" (sarcastic, resigned)"
+  },
+  {
+    "record_id": "recvwoITLxFHoI",
+    "ID": "26",
+    "中文": "「绝了」的加强版，太棒了",
+    "日语": "最高すぎる",
+    "梗": "绝绝子",
+    "英语": "Absolutely amazing"
+  },
+  {
+    "record_id": "recvwoITLxUvGy",
+    "ID": "27",
+    "中文": "「barbecue」的谐音，完蛋了",
+    "日语": "終わった（お手上げ）",
+    "梗": "芭比Q了",
+    "英语": "We're toast"
+  },
+  {
+    "record_id": "recvwoITLxQTPd",
+    "ID": "28",
+    "中文": "「真的假的」的卖萌说法",
+    "日语": "マジ？ガチ？",
+    "梗": "尊嘟假嘟",
+    "英语": "For real?"
+  },
+  {
+    "record_id": "recvwoITLxjm0J",
+    "ID": "29",
+    "中文": "驱赶霉运或讨厌的人",
+    "日语": "退散！",
+    "梗": "退退退",
+    "英语": "Begone!"
+  },
+  {
+    "record_id": "recvwoITLx7ytd",
+    "ID": "30",
+    "中文": "感谢，也常被反讽使用",
+    "日语": "ありがとう（皮肉）",
+    "梗": "听我说谢谢你",
+    "英语": "Thank you (often sarcastic)"
+  },
+  {
+    "record_id": "recvwoITLxvlAL",
+    "ID": "31",
+    "中文": "社交恐惧症",
+    "日语": "社交不安症",
+    "梗": "社恐",
+    "英语": "Social anxiety"
+  },
+  {
+    "record_id": "recvwoITLxliCn",
+    "ID": "32",
+    "中文": "社交牛逼症，极擅长社交",
+    "日语": "社交の達人",
+    "梗": "社牛",
+    "英语": "Social butterfly"
+  },
+  {
+    "record_id": "recvwoITLxBARz",
+    "ID": "33",
+    "中文": "上班时间偷懒",
+    "日语": "サボり",
+    "梗": "摸鱼",
+    "英语": "Slacking off at work"
+  },
+  {
+    "record_id": "recvwoITLxfM9h",
+    "ID": "34",
+    "中文": "破罐破摔，不再努力",
+    "日语": "投げやり",
+    "梗": "摆烂",
+    "英语": "Letting it rot; giving up"
+  },
+  {
+    "record_id": "recvwoITLx5ZG1",
+    "ID": "35",
+    "中文": "不争不抢、无所谓的态度",
+    "日语": "仏系（こだわらない）",
+    "梗": "佛系",
+    "英语": "Buddhist-like indifference"
+  },
+  {
+    "record_id": "recvwoITLxmQko",
+    "ID": "36",
+    "中文": "被吸引住，移不开眼",
+    "日语": "目が離せない",
+    "梗": "硬控",
+    "英语": "Mesmerized; can't look away"
+  },
+  {
+    "record_id": "recvwoITLxhhOP",
+    "ID": "37",
+    "中文": "辛苦劳作的打工人",
+    "日语": "牛馬（こき使われる労働者）",
+    "梗": "牛马",
+    "英语": "Beast of burden"
+  },
+  {
+    "record_id": "recvwoITLxbDwb",
+    "ID": "38",
+    "中文": "上班久了身上散不掉的疲惫感",
+    "日语": "サラリーマン臭",
+    "梗": "班味",
+    "英语": "Office stench"
+  },
+  {
+    "record_id": "recvwoITLxhdcU",
+    "ID": "39",
+    "中文": "从容不迫的放松状态",
+    "日语": "リラックス感",
+    "梗": "松弛感",
+    "英语": "Laid-back vibe"
+  },
+  {
+    "record_id": "recvwoITLxwiDS",
+    "ID": "40",
+    "中文": "荒诞离谱，让人看不懂",
+    "日语": "カオス（意味不明）",
+    "梗": "抽象",
+    "英语": "Absurd; baffling"
+  },
+  {
+    "record_id": "recvwoITLx8sYM",
+    "ID": "41",
+    "中文": "偷偷摸摸、怕被关注的感觉",
+    "日语": "こそこそ感",
+    "梗": "偷感",
+    "英语": "Stealth vibes"
+  },
+  {
+    "record_id": "recvwoITLxEnHH",
+    "ID": "42",
+    "中文": "情绪平稳、不浓烈的人",
+    "日语": "淡白な人",
+    "梗": "淡人",
+    "英语": "Mild-mannered person"
+  },
+  {
+    "record_id": "recvwoITLxvjGY",
+    "ID": "43",
+    "中文": "情绪强烈、表达欲旺盛的人",
+    "日语": "濃い人",
+    "梗": "浓人",
+    "英语": "Intense, expressive person"
+  },
+  {
+    "record_id": "recvwoITLxg4zZ",
+    "ID": "44",
+    "中文": "洋气吗、够都市吗",
+    "日语": "シティっぽい？",
+    "梗": "city不city",
+    "英语": "Is it \"city\" (hip)?"
+  },
+  {
+    "record_id": "recvwoITLxbrGz",
+    "ID": "45",
+    "中文": "明明不必却自找苦吃",
+    "日语": "わざわざ苦労する",
+    "梗": "没苦硬吃",
+    "英语": "Self-imposed hardship"
+  },
+  {
+    "record_id": "recvwoITLxjYiz",
+    "ID": "46",
+    "中文": "在某方面极擅长的人",
+    "日语": "古代ギリシャの○○の神",
+    "梗": "古希腊掌管X的神",
+    "英语": "The Greek god of X"
+  },
+  {
+    "record_id": "recvwoITLxG8JR",
+    "ID": "47",
+    "中文": "放话拒绝后又被事实打脸、转而喜欢",
+    "日语": "結局うまい（前言撤回）",
+    "梗": "真香",
+    "英语": "\"So good\" (after vowing to refuse)"
+  },
+  {
+    "record_id": "recvwoITLx25zA",
+    "ID": "48",
+    "中文": "「难受想哭」的方言谐音",
+    "日语": "つらくて泣きたい",
+    "梗": "蓝瘦香菇",
+    "英语": "Sad and wanting to cry"
+  },
+  {
+    "record_id": "recvwoITLxLzUp",
+    "ID": "49",
+    "中文": "生活太难了，压力好大",
+    "日语": "つらすぎる",
+    "梗": "我太难了",
+    "英语": "I'm having such a hard time"
+  },
+  {
+    "record_id": "recvwoITLxn1xN",
+    "ID": "50",
+    "中文": "虽然不明白但感觉很厉害",
+    "日语": "意味不明だけどすごい",
+    "梗": "不明觉厉",
+    "英语": "Don't get it, but impressed"
+  }
+]
