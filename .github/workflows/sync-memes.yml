@@ -65,6 +65,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node tools/words/generate.mjs
 
+      # 给新词补发音音频（已生成的会跳过，幂等）。
+      # 音频打包进 APK，这样 App 不依赖手机的 TTS 引擎 ——
+      # 国行机型普遍没有日语音色。
+      # 失败不影响数据同步：没音频的词会回退到系统 TTS。
+      - name: 生成新词的发音音频
+        continue-on-error: true
+        run: |
+          python -m pip install --quiet edge-tts
+          python tools/audio/generate_audio.py
+
       # 同步到 assets，让「内置兜底数据」也保持最新
       - name: 更新内置兜底数据
         run: |

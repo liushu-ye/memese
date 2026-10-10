@@ -51,11 +51,15 @@ The Eternal God        ← 点「Eternal」
 **整套是零运行时成本的：**
 
 - 词表由 GitHub Actions 在**你改表格时**用 LLM 生成一次，产出静态 `words.json`
-- App 只查本地 Map —— **点一万次词也是 0 token、0 网络、0 延迟**
-- 朗读用系统自带的 `TextToSpeech`，零依赖
+- **发音音频预先合成好打包进 APK**（231 个词，2.4 MB），不依赖手机 TTS 引擎
+- App 只查本地 Map、只播本地音频 —— **点一万次也是 0 token、0 网络、0 延迟**
 - 数据没变时连那一次 LLM 调用都会跳过
 
-中文是母语不提供查词，**英语和日语可点**。设计细节（为什么不用实时词典 API、
+**为什么音频要预生成**：国行手机的 TTS 引擎普遍没有日语（小米 HyperOS 实测不行），
+而「讯飞语记」是笔记 App、不是 TTS 引擎。预生成彻底绕开手机差异，音色质量还更好。
+详见 [`tools/audio/README.md`](tools/audio/README.md)。
+
+中文是母语不提供查词，**英语和日语可点**。词表的设计细节（为什么不用实时词典 API、
 中日文怎么分词、成本怎么控）记在 [`tools/words/README.md`](tools/words/README.md)。
 
 ## 图标
@@ -161,19 +165,22 @@ memese/
 │   │       ├── HomeScreen.kt          主页
 │   │       ├── ClickableTranslation.kt 可点文本（手写点击命中）
 │   │       ├── WordSheet.kt           点词后的读音/释义卡片
-│   │       ├── Speaker.kt             系统 TTS 封装
+│   │       ├── AudioPlayer.kt         播放内置发音音频
+│   │       ├── Speaker.kt             系统 TTS（音频缺失时的兜底）
 │   │       ├── SettingsSheet.kt       设置底部弹窗
 │   │       ├── FeedbackDialog.kt      反馈弹窗（QQ 群）
 │   │       ├── Theme.kt               Material 3 主题（品牌粉 #EC407A）
 │   │       └── Labels.kt              语言显示名 / BCP-47
+│   ├── assets/audio/                  231 个单词发音（2.4 MB，离线可用）
 │   └── res/mipmap-*dpi/               自适应图标（5 个密度）
 ├── data/
 │   ├── memes.json                     梗数据（CI 从飞书同步）
 │   └── words.json                     词表（CI 用 LLM 生成，可手工改）
 ├── tools/feishu-tool/                 飞书导出工具（零依赖）
 ├── tools/icon/                        图标生成工具
-├── tools/words/                       词表生成与校验工具
-└── .github/workflows/sync-memes.yml   定时同步 + 词表生成
+├── tools/words/                       词表生成与校验
+├── tools/audio/                       发音音频生成
+└── .github/workflows/sync-memes.yml   定时同步 + 词表/音频生成
 ```
 
 > 注：本地目录名和 Android 包名仍是 `memecard`，仓库名是 `memese`。

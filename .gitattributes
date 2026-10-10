@@ -17,6 +17,11 @@ gradlew text eol=lf
 *.webp binary
 *.ttf binary
 *.so binary
+*.mp3 binary
+
+# 音频是生成物，但必须提交（否则克隆下来没有发音），
+# 标记为生成代码以免污染语言统计
+app/src/main/assets/audio/** linguist-generated=true
 
 # 锁文件在 diff 里没意义，但保留可读性
 package-lock.json linguist-generated=true

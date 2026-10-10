@@ -10,6 +10,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import com.example.memecard.R
+import com.example.memecard.data.AudioRepository
 import com.example.memecard.data.Lang
 import com.example.memecard.data.Meme
 import com.example.memecard.data.MemeDeck
@@ -34,6 +35,7 @@ fun MemeApp() {
     val prefs = remember { MemePrefs(context) }
     val deck = remember { MemeDeck() }
     val speaker = remember { Speaker(context) }
+    val audio = remember { AudioPlayer(context) }
 
     var memes by remember { mutableStateOf<List<Meme>>(emptyList()) }
     var words by remember { mutableStateOf(WordTable.EMPTY) }
@@ -44,7 +46,10 @@ fun MemeApp() {
     var tapped by remember { mutableStateOf<WordTap?>(null) }
 
     DisposableEffect(Unit) {
-        onDispose { speaker.shutdown() }
+        onDispose {
+            audio.stop()
+            speaker.shutdown()
+        }
     }
 
     fun pickNext(list: List<Meme>) {
@@ -106,8 +111,12 @@ fun MemeApp() {
             lang = tap.lang,
             entry = words.dictFor(tap.lang)?.get(tap.word),
             onSpeak = {
-                val ok = speaker.speak(tap.word, tap.lang.bcp47())
-                if (!ok) {
+                // 优先用打包好的音频：离线、音质好、不依赖手机的 TTS 引擎。
+                // 只有词表里新增、还没生成音频的词才会回退到系统 TTS。
+                val bundled = AudioRepository.assetPathFor(context, tap.lang, tap.word)
+                val played = bundled != null && audio.play(bundled)
+
+                if (!played && !speaker.speak(tap.word, tap.lang.bcp47())) {
                     Toast.makeText(
                         context,
                         context.getString(R.string.word_tts_missing),
