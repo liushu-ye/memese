@@ -25,25 +25,24 @@ class MemePrefs(context: Context) {
                 .apply()
         }
 
-    /** 上次成功同步时服务端返回的 ETag，用于条件请求。 */
-    val etag: String?
-        get() = prefs.getString(KEY_ETAG, null)
+    /**
+     * 每个数据文件各自记一个 ETag，用于条件请求（没变化时服务端返回 304）。
+     * 现在有两个文件：memes.json 和 words.json。
+     */
+    fun etag(file: String): String? = prefs.getString("etag_$file", null)
 
-    val lastSyncedAt: Long
-        get() = prefs.getLong(KEY_SYNCED_AT, 0L)
+    fun lastSyncedAt(file: String): Long = prefs.getLong("synced_$file", 0L)
 
-    fun saveSync(etag: String?) {
+    fun saveSync(file: String, etag: String?) {
         prefs.edit()
-            .putString(KEY_ETAG, etag)
-            .putLong(KEY_SYNCED_AT, System.currentTimeMillis())
+            .putString("etag_$file", etag)
+            .putLong("synced_$file", System.currentTimeMillis())
             .apply()
     }
 
     companion object {
         private const val PREFS_NAME = "memecard"
         private const val KEY_LANGS = "enabled_langs"
-        private const val KEY_ETAG = "etag"
-        private const val KEY_SYNCED_AT = "synced_at"
 
         /** 默认显示中文和英语：母语 + 最通用的外语。 */
         val DEFAULT_LANGS: Set<Lang> = setOf(Lang.ZH, Lang.EN)

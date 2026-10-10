@@ -24,4 +24,13 @@
 
     <string name="empty_data">没有读到梗数据</string>
     <string name="empty_data_hint">请检查 assets/memes.json 是否存在</string>
+
+    <string name="word_speak">朗读</string>
+    <string name="word_close">关闭</string>
+    <string name="word_reading_ipa">音标</string>
+    <string name="word_reading_kana">读音</string>
+    <string name="word_meaning">释义</string>
+    <string name="word_no_entry">词表里还没有收这个词</string>
+    <string name="word_tts_missing">设备没装这个语言的语音包，读不出来</string>
+    <string name="word_tap_hint">点译文里的词，可查读音和意思</string>
 </resources>

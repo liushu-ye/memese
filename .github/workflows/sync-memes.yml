@@ -1,10 +1,12 @@
 name: Sync memes from Feishu
 
-# 你只管在飞书多维表格里填数据，这个工作流负责把表同步成仓库里的 JSON。
+# 你只管在飞书多维表格里填数据，这个工作流负责把表同步成仓库里的 JSON，
+# 并顺带更新「点词查询」用的词表。
 #
 # 需要先配置（Settings → Secrets and variables → Actions）：
 #   Secrets:   FEISHU_APP_ID / FEISHU_APP_SECRET    ← 从飞书开发者后台拿
 #   Variables: MEME_TABLE_URL                       ← 你的多维表格分享链接
+#   （可选）Secret: DEEPSEEK_API_KEY                ← 不配则用 GitHub Models
 #
 # 密钥只存在于 GitHub 加密 Secrets 里，绝不会出现在代码或 App 中。
 
@@ -16,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  models: read              # 让词表生成步骤能用内置的 GITHUB_TOKEN 调 LLM，无需额外密钥
 
 concurrency:
   group: sync-memes
@@ -47,21 +50,39 @@ jobs:
             --sort-by ID \
             --out data/memes.json
 
-      # 同步一份到 assets，让「内置兜底数据」也保持最新
+      # 词表生成。
+      #
+      # 成本控制：memes.json 没变化就直接跳过，不调用 LLM（0 token）。
+      # 有新梗时只补缺失的词，已有词条一律保留（不会覆盖你手工修正的内容）。
+      #
+      # 容错：这一步失败不影响梗数据同步 —— 词表保持原样，App 只是
+      # 对缺的词不可点，功能不会坏。
+      - name: 生成/更新词表
+        continue-on-error: true
+        env:
+          # 优先用 DeepSeek；没配则回落到 GitHub Models（用内置 token，免费）
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node tools/words/generate.mjs
+
+      # 同步到 assets，让「内置兜底数据」也保持最新
       - name: 更新内置兜底数据
-        run: cp data/memes.json app/src/main/assets/memes.json
+        run: |
+          cp data/memes.json app/src/main/assets/memes.json
+          cp data/words.json app/src/main/assets/words.json
 
       - name: 有变化才提交
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- data/memes.json app/src/main/assets/memes.json; then
-            echo "表格没有变化，跳过提交"
+          if git diff --quiet -- data/ app/src/main/assets/; then
+            echo "没有变化，跳过提交"
             exit 0
           fi
 
           COUNT=$(node -e "console.log(require('./data/memes.json').length)")
-          git add data/memes.json app/src/main/assets/memes.json
-          git commit -m "chore(data): sync ${COUNT} memes from Feishu table"
+          WORDS=$(node -e "const w=require('./data/words.json');console.log(Object.keys(w.en).length+'+'+Object.keys(w.ja).length)")
+          git add data/ app/src/main/assets/
+          git commit -m "chore(data): sync ${COUNT} memes from Feishu table (words ${WORDS})"
           git push

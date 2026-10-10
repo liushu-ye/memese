@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.example.memecard.R
 import com.example.memecard.data.Lang
 import com.example.memecard.data.Meme
+import com.example.memecard.data.Segment
 import com.example.memecard.data.textFor
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,6 +44,9 @@ fun HomeScreen(
     onRefresh: () -> Unit,
     onOpenSettings: () -> Unit,
     onOpenFeedback: () -> Unit,
+    segmentFor: (String, Lang) -> List<Segment>,
+    onWordClick: (Lang, String) -> Unit,
+    showTapHint: Boolean,
 ) {
     Scaffold(
         topBar = {
@@ -76,14 +80,25 @@ fun HomeScreen(
             if (meme == null) {
                 EmptyState()
             } else {
-                MemeCard(meme = meme, enabledLangs = enabledLangs)
+                MemeCard(
+                    meme = meme,
+                    enabledLangs = enabledLangs,
+                    segmentFor = segmentFor,
+                    onWordClick = onWordClick,
+                )
 
-                Spacer(Modifier.height(28.dp))
+                if (showTapHint) {
+                    Spacer(Modifier.height(12.dp))
+                    Text(
+                        text = stringResource(R.string.word_tap_hint),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
 
-                Button(
-                    onClick = onRefresh,
-                    modifier = Modifier.height(52.dp),
-                ) {
+                Spacer(Modifier.height(24.dp))
+
+                Button(onClick = onRefresh, modifier = Modifier.height(52.dp)) {
                     Icon(Icons.Default.Refresh, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
                     Text(
@@ -97,9 +112,13 @@ fun HomeScreen(
 }
 
 @Composable
-private fun MemeCard(meme: Meme, enabledLangs: Set<Lang>) {
-    // Lang.entries 保证显示顺序固定为 中 → 英 → 日，
-    // 不受 Set 迭代顺序影响，用户切换时位置不会跳。
+private fun MemeCard(
+    meme: Meme,
+    enabledLangs: Set<Lang>,
+    segmentFor: (String, Lang) -> List<Segment>,
+    onWordClick: (Lang, String) -> Unit,
+) {
+    // Lang.entries 保证顺序固定为 中 → 英 → 日，不受 Set 迭代顺序影响
     val ordered = Lang.entries.filter { it in enabledLangs }
 
     Card(
@@ -128,12 +147,25 @@ private fun MemeCard(meme: Meme, enabledLangs: Set<Lang>) {
 
                 ordered.forEachIndexed { index, lang ->
                     if (index > 0) Spacer(Modifier.height(16.dp))
-                    Text(
-                        text = meme.textFor(lang),
-                        style = MaterialTheme.typography.titleMedium,
-                        textAlign = TextAlign.Center,
-                        color = MaterialTheme.colorScheme.onSurface,
-                    )
+
+                    val text = meme.textFor(lang)
+                    val segments = segmentFor(text, lang)
+
+                    // 有可点片段就用可点击版本，否则退回纯文本（不留假的可点暗示）
+                    if (segments.any { it.word != null }) {
+                        ClickableTranslation(
+                            segments = segments,
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.fillMaxWidth(),
+                            onWordClick = { onWordClick(lang, it) },
+                        )
+                    } else {
+                        PlainTranslation(
+                            text = text,
+                            style = MaterialTheme.typography.titleMedium,
+                            modifier = Modifier.fillMaxWidth(),
+                        )
+                    }
                 }
             }
         }

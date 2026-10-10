@@ -17,3 +17,19 @@ fun Lang.displayName(): String = stringResource(
         Lang.JA -> R.string.lang_ja
     }
 )
+
+/** 读音那一行的标签：英语显示「音标」，其余显示「读音」。 */
+@Composable
+fun Lang.readingLabel(): String = stringResource(
+    when (this) {
+        Lang.EN -> R.string.word_reading_ipa
+        else -> R.string.word_reading_kana
+    }
+)
+
+/** 交给系统 TTS 的 BCP-47 语言标签。 */
+fun Lang.bcp47(): String = when (this) {
+    Lang.ZH -> "zh-CN"
+    Lang.EN -> "en-US"
+    Lang.JA -> "ja-JP"
+}

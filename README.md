@@ -4,6 +4,7 @@
 
 - 主页：一个梗 + 翻译，底部一个「换一个」按钮
 - 设置：可多选中文 / English / 日本語，选几种就显示几种
+- **点词查询**：点译文里的词看读音和释义，可朗读
 - 反馈：顶栏信封图标，可一键复制 QQ 群号
 - 数据：飞书多维表格 → 自动同步到仓库 → App 读取
 
@@ -30,6 +31,32 @@
 ```
 
 **翻译全部取消勾选**时只显示梗 —— 可以当作自测模式，想不起来再打开设置。
+
+## 点词查询
+
+译文里的词是**可以点的**。点一下弹出卡片：**读音 + 中文释义**，还能用系统 TTS 读出来。
+
+```
+The Eternal God        ← 点「Eternal」
+        ↓
+┌─────────────────────┐
+│ Eternal             │
+│ English             │
+│ 音标  /ɪˈtɜːrnl/    │
+│ 释义  永恒的；不朽的  │
+│   [▶ 朗读]  [关闭]   │
+└─────────────────────┘
+```
+
+**整套是零运行时成本的：**
+
+- 词表由 GitHub Actions 在**你改表格时**用 LLM 生成一次，产出静态 `words.json`
+- App 只查本地 Map —— **点一万次词也是 0 token、0 网络、0 延迟**
+- 朗读用系统自带的 `TextToSpeech`，零依赖
+- 数据没变时连那一次 LLM 调用都会跳过
+
+中文是母语不提供查词，**英语和日语可点**。设计细节（为什么不用实时词典 API、
+中日文怎么分词、成本怎么控）记在 [`tools/words/README.md`](tools/words/README.md)。
 
 ## 图标
 
@@ -120,26 +147,33 @@ cp data/memes.json app/src/main/assets/memes.json
 ```
 memese/
 ├── app/src/main/
-│   ├── assets/memes.json              内置兜底数据
+│   ├── assets/                        内置兜底数据（memes.json + words.json）
 │   ├── java/com/example/memecard/
 │   │   ├── MainActivity.kt            唯一 Activity
 │   │   ├── data/
 │   │   │   ├── Meme.kt                数据模型 + 语言枚举
 │   │   │   ├── MemeDeck.kt            洗牌袋（随机不重复）
 │   │   │   ├── MemePrefs.kt           设置持久化
+│   │   │   ├── Tokenizer.kt           分词 + 词表（纯函数，可测）
 │   │   │   └── MemeRepository.kt      三级数据源 + 增量同步
 │   │   └── ui/
 │   │       ├── MemeApp.kt             状态持有者
 │   │       ├── HomeScreen.kt          主页
+│   │       ├── ClickableTranslation.kt 可点文本（手写点击命中）
+│   │       ├── WordSheet.kt           点词后的读音/释义卡片
+│   │       ├── Speaker.kt             系统 TTS 封装
 │   │       ├── SettingsSheet.kt       设置底部弹窗
 │   │       ├── FeedbackDialog.kt      反馈弹窗（QQ 群）
 │   │       ├── Theme.kt               Material 3 主题（品牌粉 #EC407A）
-│   │       └── Labels.kt              语言显示名
+│   │       └── Labels.kt              语言显示名 / BCP-47
 │   └── res/mipmap-*dpi/               自适应图标（5 个密度）
-├── data/memes.json                    数据源（CI 更新）
+├── data/
+│   ├── memes.json                     梗数据（CI 从飞书同步）
+│   └── words.json                     词表（CI 用 LLM 生成，可手工改）
 ├── tools/feishu-tool/                 飞书导出工具（零依赖）
-├── tools/icon/                        图标生成工具（见其 README）
-└── .github/workflows/sync-memes.yml   定时同步
+├── tools/icon/                        图标生成工具
+├── tools/words/                       词表生成与校验工具
+└── .github/workflows/sync-memes.yml   定时同步 + 词表生成
 ```
 
 > 注：本地目录名和 Android 包名仍是 `memecard`，仓库名是 `memese`。
