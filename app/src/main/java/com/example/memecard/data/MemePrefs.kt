@@ -40,9 +40,39 @@ class MemePrefs(context: Context) {
             .apply()
     }
 
+    /**
+     * 已标记「学会了」的梗 ID（就是飞书表格里的 ID 列）。
+     *
+     * 用 ID 而不是下标或 record_id：ID 是用户自己在表格里维护的稳定标识，
+     * 数据增删后不会错位；record_id 是飞书内部的，没必要依赖。
+     */
+    var learnedIds: Set<Int>
+        get() = prefs.getStringSet(KEY_LEARNED, null)
+            ?.mapNotNull { it.toIntOrNull() }
+            ?.toSet()
+            ?: emptySet()
+        set(value) {
+            prefs.edit()
+                .putStringSet(KEY_LEARNED, value.map { it.toString() }.toSet())
+                .apply()
+        }
+
+    fun markLearned(id: Int) {
+        learnedIds = learnedIds + id
+    }
+
+    fun unmarkLearned(id: Int) {
+        learnedIds = learnedIds - id
+    }
+
+    fun clearLearned() {
+        prefs.edit().remove(KEY_LEARNED).apply()
+    }
+
     companion object {
         private const val PREFS_NAME = "memecard"
         private const val KEY_LANGS = "enabled_langs"
+        private const val KEY_LEARNED = "learned_ids"
 
         /** 默认显示中文和英语：母语 + 最通用的外语。 */
         val DEFAULT_LANGS: Set<Lang> = setOf(Lang.ZH, Lang.EN)

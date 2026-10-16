@@ -7,24 +7,24 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-// 品牌粉红。必须与 res/values/colors.xml 里的 ic_launcher_background 保持一致，
-// 否则图标和应用内配色会对不上。
-private val Brand = Color(0xFFEC407A)
+// 品牌紫。取自自定义图标的主色系（图标底 #33128A、亮部 #7624B7），
+// 这里取一个在浅色背景上可读、与白字对比度约 6.7:1 的中间调。
+private val Brand = Color(0xFF6C3BC9)
 
 private val LightColors = lightColorScheme(
     primary = Brand,
     onPrimary = Color.White,
-    primaryContainer = Color(0xFFFFD9E2),
-    onPrimaryContainer = Color(0xFF3E001D),
+    primaryContainer = Color(0xFFE9DDFF),
+    onPrimaryContainer = Color(0xFF22005D),
     surface = Color(0xFFFFFBFF),
     background = Color(0xFFFFFBFF),
 )
 
 private val DarkColors = darkColorScheme(
-    primary = Color(0xFFFFB1C8),
-    onPrimary = Color(0xFF62002F),
-    primaryContainer = Color(0xFF8B003F),
-    onPrimaryContainer = Color(0xFFFFD9E2),
+    primary = Color(0xFFCFBCFF),
+    onPrimary = Color(0xFF381E72),
+    primaryContainer = Color(0xFF4F378B),
+    onPrimaryContainer = Color(0xFFE9DDFF),
 )
 
 /**

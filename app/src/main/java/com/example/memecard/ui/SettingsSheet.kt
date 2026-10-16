@@ -14,11 +14,15 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -29,7 +33,12 @@ import com.example.memecard.data.Lang
 @Composable
 fun SettingsSheet(
     enabledLangs: Set<Lang>,
+    learnedCount: Int,
+    totalCount: Int,
+    reviewMode: Boolean,
     onToggle: (Lang) -> Unit,
+    onToggleReviewMode: () -> Unit,
+    onClearLearned: () -> Unit,
     onDismiss: () -> Unit,
 ) {
     ModalBottomSheet(onDismissRequest = onDismiss) {
@@ -39,6 +48,7 @@ fun SettingsSheet(
                 .padding(horizontal = 24.dp)
                 .padding(bottom = 36.dp),
         ) {
+            // ───────── 显示语言 ─────────
             Text(
                 text = stringResource(R.string.settings_title),
                 style = MaterialTheme.typography.titleLarge,
@@ -52,7 +62,7 @@ fun SettingsSheet(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(18.dp))
 
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Lang.entries.forEach { lang ->
@@ -76,7 +86,50 @@ fun SettingsSheet(
                 }
             }
 
-            Spacer(Modifier.height(28.dp))
+            Spacer(Modifier.height(26.dp))
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+            Spacer(Modifier.height(20.dp))
+
+            // ───────── 学习进度 ─────────
+            Text(
+                text = stringResource(R.string.settings_progress_title),
+                style = MaterialTheme.typography.titleLarge,
+            )
+
+            Spacer(Modifier.height(6.dp))
+
+            Text(
+                text = stringResource(R.string.progress_format, learnedCount, totalCount),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+
+            Spacer(Modifier.height(14.dp))
+
+            // 复习模式：只抽已学过的。有了它，误标也能找回来取消，
+            // 不至于只能「清空全部」重来。
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = stringResource(R.string.settings_review_mode),
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                Switch(checked = reviewMode, onCheckedChange = { onToggleReviewMode() })
+            }
+
+            Spacer(Modifier.height(10.dp))
+
+            TextButton(
+                onClick = onClearLearned,
+                enabled = learnedCount > 0,
+            ) {
+                Text(stringResource(R.string.settings_clear_learned))
+            }
+
+            Spacer(Modifier.height(20.dp))
 
             Button(
                 onClick = onDismiss,

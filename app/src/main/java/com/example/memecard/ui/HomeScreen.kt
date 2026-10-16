@@ -2,6 +2,7 @@ package com.example.memecard.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Settings
@@ -21,6 +23,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -41,7 +44,14 @@ import com.example.memecard.data.textFor
 fun HomeScreen(
     meme: Meme?,
     enabledLangs: Set<Lang>,
+    isLearned: Boolean,
+    learnedCount: Int,
+    totalCount: Int,
+    allLearned: Boolean,
+    reviewMode: Boolean,
     onRefresh: () -> Unit,
+    onToggleLearned: () -> Unit,
+    onRestart: () -> Unit,
     onOpenSettings: () -> Unit,
     onOpenFeedback: () -> Unit,
     segmentFor: (String, Lang) -> List<Segment>,
@@ -73,37 +83,64 @@ fun HomeScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding)
-                .padding(horizontal = 20.dp, vertical = 24.dp),
+                .padding(horizontal = 20.dp, vertical = 20.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
-            if (meme == null) {
-                EmptyState()
-            } else {
-                MemeCard(
-                    meme = meme,
-                    enabledLangs = enabledLangs,
-                    segmentFor = segmentFor,
-                    onWordClick = onWordClick,
-                )
+            when {
+                allLearned -> AllLearnedState(learnedCount, onRestart)
 
-                if (showTapHint) {
-                    Spacer(Modifier.height(12.dp))
+                meme == null -> EmptyState()
+
+                else -> {
+                    MemeCard(
+                        meme = meme,
+                        enabledLangs = enabledLangs,
+                        segmentFor = segmentFor,
+                        onWordClick = onWordClick,
+                    )
+
+                    if (showTapHint) {
+                        Spacer(Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(R.string.word_tap_hint),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+
+                    Spacer(Modifier.height(20.dp))
+
+                    Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        OutlinedButton(
+                            onClick = onToggleLearned,
+                            modifier = Modifier.height(52.dp),
+                        ) {
+                            Icon(Icons.Default.Check, contentDescription = null)
+                            Spacer(Modifier.width(6.dp))
+                            Text(
+                                text = stringResource(
+                                    if (isLearned) R.string.action_unlearn else R.string.action_learned,
+                                ),
+                            )
+                        }
+                        Button(onClick = onRefresh, modifier = Modifier.height(52.dp)) {
+                            Icon(Icons.Default.Refresh, contentDescription = null)
+                            Spacer(Modifier.width(6.dp))
+                            Text(stringResource(R.string.action_refresh))
+                        }
+                    }
+
+                    Spacer(Modifier.height(14.dp))
+
                     Text(
-                        text = stringResource(R.string.word_tap_hint),
+                        text = if (reviewMode) {
+                            stringResource(R.string.progress_review_format, learnedCount)
+                        } else {
+                            stringResource(R.string.progress_format, learnedCount, totalCount)
+                        },
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    )
-                }
-
-                Spacer(Modifier.height(24.dp))
-
-                Button(onClick = onRefresh, modifier = Modifier.height(52.dp)) {
-                    Icon(Icons.Default.Refresh, contentDescription = null)
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = stringResource(R.string.action_refresh),
-                        style = MaterialTheme.typography.titleMedium,
                     )
                 }
             }
@@ -130,7 +167,7 @@ private fun MemeCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 28.dp, vertical = 36.dp),
+                .padding(horizontal = 28.dp, vertical = 32.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
@@ -141,12 +178,12 @@ private fun MemeCard(
             )
 
             if (ordered.isNotEmpty()) {
-                Spacer(Modifier.height(24.dp))
+                Spacer(Modifier.height(20.dp))
                 HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
-                Spacer(Modifier.height(24.dp))
+                Spacer(Modifier.height(20.dp))
 
                 ordered.forEachIndexed { index, lang ->
-                    if (index > 0) Spacer(Modifier.height(16.dp))
+                    if (index > 0) Spacer(Modifier.height(14.dp))
 
                     val text = meme.textFor(lang)
                     val segments = segmentFor(text, lang)
@@ -168,6 +205,28 @@ private fun MemeCard(
                     }
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun AllLearnedState(count: Int, onRestart: () -> Unit) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(
+            text = stringResource(R.string.all_learned_title),
+            style = MaterialTheme.typography.headlineSmall,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        Spacer(Modifier.height(10.dp))
+        Text(
+            text = stringResource(R.string.all_learned_hint, count),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+        )
+        Spacer(Modifier.height(24.dp))
+        Button(onClick = onRestart, modifier = Modifier.height(48.dp)) {
+            Text(stringResource(R.string.action_restart))
         }
     }
 }

@@ -5,6 +5,23 @@
     <string name="action_settings">设置</string>
     <string name="action_refresh">换一个</string>
     <string name="action_feedback">反馈与建议</string>
+    <string name="action_learned">学会了</string>
+    <string name="action_unlearn">取消已学</string>
+
+    <string name="progress_format">已学 %1$d / %2$d</string>
+    <string name="progress_review_format">复习已学 %1$d 个</string>
+
+    <string name="all_learned_title">全部学完！</string>
+    <string name="all_learned_hint">%1$d 个梗都标记成已学了</string>
+    <string name="action_restart">重新开始</string>
+
+    <string name="settings_title">显示语言</string>
+    <string name="settings_hint">可多选。选中的语言会显示在梗的下方；全部取消则只显示梗，当作自测。</string>
+    <string name="settings_progress_title">学习进度</string>
+    <string name="settings_review_mode">只复习已学过的</string>
+    <string name="settings_clear_learned">清空已学记录</string>
+    <string name="settings_cleared">已清空</string>
+    <string name="settings_done">完成</string>
 
     <string name="feedback_title">反馈与建议</string>
     <string name="feedback_message">有想要添加的功能、遇到的问题，或者任何优化建议，都欢迎告诉我们。\n\n也可以直接加入 QQ 群一起聊：</string>
@@ -13,10 +30,6 @@
     <string name="feedback_copy">复制群号</string>
     <string name="feedback_copied">群号已复制</string>
     <string name="feedback_close">关闭</string>
-
-    <string name="settings_title">显示语言</string>
-    <string name="settings_hint">可多选。选中的语言会显示在梗的下方；全部取消则只显示梗，当作自测。</string>
-    <string name="settings_done">完成</string>
 
     <string name="lang_zh">中文</string>
     <string name="lang_en">English</string>

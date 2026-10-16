@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="window_background">#FFFFFBFF</color>
-    <!-- 图标背景：粉红。与 Theme.kt 里的 primary 保持一致 -->
-    <color name="ic_launcher_background">#FFEC407A</color>
+    <!--
+      图标背景：取自定义图标边缘的平均色。
+      前景是满幅不透明图，正常情况下遮罩看到的就是前景本身；
+      这里保持一致只是为了极端遮罩下的过渡自然。
+    -->
+    <color name="ic_launcher_background">#FF33128A</color>
 </resources>

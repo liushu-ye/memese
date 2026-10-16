@@ -41,6 +41,8 @@ fun MemeApp() {
     var words by remember { mutableStateOf(WordTable.EMPTY) }
     var current by remember { mutableStateOf<Meme?>(null) }
     var enabledLangs by remember { mutableStateOf(prefs.enabledLangs) }
+    var learned by remember { mutableStateOf(prefs.learnedIds) }
+    var reviewMode by remember { mutableStateOf(false) }
     var showSettings by remember { mutableStateOf(false) }
     var showFeedback by remember { mutableStateOf(false) }
     var tapped by remember { mutableStateOf<WordTap?>(null) }
@@ -50,6 +52,17 @@ fun MemeApp() {
             audio.stop()
             speaker.shutdown()
         }
+    }
+
+    /**
+     * 抽题池。
+     *
+     * 正常模式只从「没学过」里抽 —— 这就是用户要的「已学的不再随机到」。
+     * 复习模式反过来只抽已学的，这样误标了也能找回来取消，不至于只能清空重来。
+     */
+    val pool = remember(memes, learned, reviewMode) {
+        if (reviewMode) memes.filter { it.id in learned }
+        else memes.filter { it.id !in learned }
     }
 
     fun pickNext(list: List<Meme>) {
@@ -62,25 +75,47 @@ fun MemeApp() {
 
     LaunchedEffect(Unit) {
         // 第一步：同步读取本地数据并立刻显示，不阻塞、不白屏
-        val local = MemeRepository.immediate(context)
-        memes = local
+        memes = MemeRepository.immediate(context)
         words = MemeRepository.immediateWords(context)
-        pickNext(local)
 
         // 第二步：后台尝试拉最新；失败就继续用本地的，用户无感
         if (MemeRepository.sync(context)) {
-            val updated = MemeRepository.immediate(context)
-            memes = updated
+            memes = MemeRepository.immediate(context)
             words = MemeRepository.immediateWords(context)
-            deck.reset()
-            pickNext(updated)
         }
     }
+
+    // 池子一变（标记已学 / 切换复习模式 / 数据首次载入）就重洗并抽下一张。
+    // 用 pool 作为 key，等于「内容变了才重来」，不会每次重组都跳牌。
+    LaunchedEffect(pool) {
+        deck.reset()
+        pickNext(pool)
+    }
+
+    /** 当前这张是不是已学 —— 决定按钮是「学会了」还是「取消已学」。 */
+    val currentLearned = current?.let { it.id in learned } == true
 
     HomeScreen(
         meme = current,
         enabledLangs = enabledLangs,
-        onRefresh = { pickNext(memes) },
+        isLearned = currentLearned,
+        learnedCount = learned.size,
+        totalCount = memes.size,
+        allLearned = !reviewMode && memes.isNotEmpty() && pool.isEmpty(),
+        reviewMode = reviewMode,
+        onRefresh = { pickNext(pool) },
+        onToggleLearned = {
+            val m = current
+            if (m != null) {
+                val next = if (m.id in learned) learned - m.id else learned + m.id
+                learned = next
+                prefs.learnedIds = next
+            }
+        },
+        onRestart = {
+            learned = emptySet()
+            prefs.clearLearned()
+        },
         onOpenSettings = { showSettings = true },
         onOpenFeedback = { showFeedback = true },
         segmentFor = { text, lang -> Tokenizer.segment(text, lang, words) },
@@ -91,11 +126,19 @@ fun MemeApp() {
     if (showSettings) {
         SettingsSheet(
             enabledLangs = enabledLangs,
+            learnedCount = learned.size,
+            totalCount = memes.size,
+            reviewMode = reviewMode,
             onToggle = { lang ->
                 val next: Set<Lang> =
                     if (lang in enabledLangs) enabledLangs - lang else enabledLangs + lang
                 enabledLangs = next
                 prefs.enabledLangs = next
+            },
+            onToggleReviewMode = { reviewMode = !reviewMode },
+            onClearLearned = {
+                learned = emptySet()
+                prefs.clearLearned()
             },
             onDismiss = { showSettings = false },
         )
