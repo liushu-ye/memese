@@ -398,5 +398,405 @@
     "日语": "意味不明だけどすごい",
     "梗": "不明觉厉",
     "英语": "Don't get it, but impressed"
+  },
+  {
+    "record_id": "reczz28NwdJvUVH3",
+    "ID": "51",
+    "中文": "爱出风头、格外抢眼的人",
+    "日语": "目立ちたがり屋",
+    "梗": "显眼包",
+    "英语": "Show-off; scene-stealer"
+  },
+  {
+    "record_id": "reczz28NwdJvSdmw",
+    "ID": "52",
+    "中文": "只做某件事的伙伴，如饭搭子、旅游搭子",
+    "日语": "相棒（特定の活動だけ一緒にやる相手）",
+    "梗": "搭子",
+    "英语": "Activity buddy (dining buddy, travel buddy)"
+  },
+  {
+    "record_id": "reczz28NwdJvUar2",
+    "ID": "53",
+    "中文": "突如其来的巨大流量或机遇",
+    "日语": "降って湧いた大金運",
+    "梗": "泼天的富贵",
+    "英语": "A windfall of fortune"
+  },
+  {
+    "record_id": "reczz28NwdJvUXug",
+    "ID": "54",
+    "中文": "「太酷啦」的谐音，表示太酷了",
+    "日语": "イケてる（「太酷啦」の音訳）",
+    "梗": "泰裤辣",
+    "英语": "So cool (phonetic pun on 太酷啦)"
+  },
+  {
+    "record_id": "reczz28NwdJvT9Kz",
+    "ID": "55",
+    "中文": "远远超过对手",
+    "日语": "ぶっちぎりでリード",
+    "梗": "遥遥领先",
+    "英语": "Far ahead; leagues ahead"
+  },
+  {
+    "record_id": "reczz28NwdJvV3Nj",
+    "ID": "56",
+    "中文": "「猴子」的方言谐音，打工人自嘲",
+    "日语": "サル（労働者の自嘲）",
+    "梗": "吗喽",
+    "英语": "Monkey — self-deprecating for overworked workers"
+  },
+  {
+    "record_id": "reczz28NwdJvRzhS",
+    "ID": "57",
+    "中文": "极限压缩时间的紧凑旅游",
+    "日语": "弾丸旅行（特攻観光）",
+    "梗": "特种兵旅游",
+    "英语": "Special-forces-style travel (extreme time compression)"
+  },
+  {
+    "record_id": "reczz28NwdJvUd7p",
+    "ID": "58",
+    "中文": "高饱和度亮色的穿搭",
+    "日语": "ドーパミンコーデ",
+    "梗": "多巴胺穿搭",
+    "英语": "Dopamine dressing"
+  },
+  {
+    "record_id": "reczz28NwdJvSgkd",
+    "ID": "59",
+    "中文": "对南方游客的爱称",
+    "日语": "南方の小芋（南方からの観光客の愛称）",
+    "梗": "南方小土豆",
+    "英语": "Southern little potato — affectionate name for southern tourists"
+  },
+  {
+    "record_id": "reczz28NwdJvUvsx",
+    "ID": "60",
+    "中文": "让人感到愉悦、被理解的情绪收益",
+    "日语": "情緒的価値",
+    "梗": "情绪价值",
+    "英语": "Emotional value"
+  },
+  {
+    "record_id": "reczz28NwdJvT7xt",
+    "ID": "61",
+    "中文": "在家照顾父母换取生活费",
+    "日语": "専業子供（親の世話で生活費を得る）",
+    "梗": "全职儿女",
+    "英语": "Full-time child (caring for parents for a living)"
+  },
+  {
+    "record_id": "reczz28NwdJvTjag",
+    "ID": "62",
+    "中文": "吃饭时配着看的视频",
+    "日语": "電子たくあん（食事のお供の動画）",
+    "梗": "电子榨菜",
+    "英语": "Digital pickles (video to watch while eating)"
+  },
+  {
+    "record_id": "reczz28NwdJvVAj5",
+    "ID": "63",
+    "中文": "学历成了脱不下的枷锁",
+    "日语": "孔乙己の長衫（学歴という鎖）",
+    "梗": "孔乙己的长衫",
+    "英语": "Kong Yiji's long gown (a degree as an unshakable burden)"
+  },
+  {
+    "record_id": "reczz28NwdJvS7HZ",
+    "ID": "64",
+    "中文": "给孩子疯狂施加学习压力",
+    "日语": "教育ママ・パパ（子どもを詰め込む）",
+    "梗": "鸡娃",
+    "英语": "Chicken parenting (hyper-intensive tutoring)"
+  },
+  {
+    "record_id": "reczz28NwdJvUkoY",
+    "ID": "65",
+    "中文": "靠网络远程工作、四处旅居的人",
+    "日语": "デジタルノマド",
+    "梗": "数字游民",
+    "英语": "Digital nomad"
+  },
+  {
+    "record_id": "reczz28NwdJvTA8H",
+    "ID": "66",
+    "中文": "高度投入、身临其境",
+    "日语": "没入型",
+    "梗": "沉浸式",
+    "英语": "Immersive"
+  },
+  {
+    "record_id": "reczz28NwdJvSK0F",
+    "ID": "67",
+    "中文": "关键在于……、就是……",
+    "日语": "とにかく〜（要は〜）",
+    "梗": "主打一个",
+    "英语": "The whole point is..."
+  },
+  {
+    "record_id": "reczz28NwdJvUnxP",
+    "ID": "68",
+    "中文": "你这样做合适吗（半开玩笑的质问）",
+    "日语": "礼儀はあるの？",
+    "梗": "你礼貌吗",
+    "英语": "Are you being polite? (half-joking rebuke)"
+  },
+  {
+    "record_id": "reczz28NwdJvTqQj",
+    "ID": "69",
+    "中文": "那又怎么样（反问式的不在乎）",
+    "日语": "だから何？",
+    "梗": "那咋了",
+    "英语": "So what?"
+  },
+  {
+    "record_id": "reczz28NwdJvVHAC",
+    "ID": "70",
+    "中文": "肯定自己、犒劳自己",
+    "日语": "自分に乾杯",
+    "梗": "敬自己一杯",
+    "英语": "A toast to yourself"
+  },
+  {
+    "record_id": "reczz28NwdJvVMBK",
+    "ID": "71",
+    "中文": "小猫咪（源自日语「はちみ」）",
+    "日语": "ハチミ（ネコの愛称）",
+    "梗": "哈基米",
+    "英语": "Kitty (from Japanese hachimi)"
+  },
+  {
+    "record_id": "reczz28NwdJvTg6H",
+    "ID": "72",
+    "中文": "「小狗」的谐音，可爱说法",
+    "日语": "ワンちゃん",
+    "梗": "修勾",
+    "英语": "Puppy (cutesy phonetic spelling)"
+  },
+  {
+    "record_id": "reczz28NwdJvS76t",
+    "ID": "73",
+    "中文": "功劳极大，值得最高规格纪念",
+    "日语": "太廟に祀られるべき（最大級の賛辞）",
+    "梗": "配享太庙",
+    "英语": "Deserves a place in the ancestral temple (huge merit)"
+  },
+  {
+    "record_id": "reczz28NwdJvUxAO",
+    "ID": "74",
+    "中文": "对年长者的戏称，带调侃",
+    "日语": "ジジイ（冗談めかして）",
+    "梗": "老登",
+    "英语": "Old geezer (jokey)"
+  },
+  {
+    "record_id": "reczz28NwdJvVn0Q",
+    "ID": "75",
+    "中文": "二次元周边（goods 的音译）",
+    "日语": "グッズ",
+    "梗": "谷子",
+    "英语": "Merch (from goods)"
+  },
+  {
+    "record_id": "reczz28NwdJvRv7r",
+    "ID": "76",
+    "中文": "购买二次元周边",
+    "日语": "グッズを買う",
+    "梗": "吃谷",
+    "英语": "Buying merch"
+  },
+  {
+    "record_id": "reczz28NwdJvUcxt",
+    "ID": "77",
+    "中文": "反讽：其实快崩溃了",
+    "日语": "精神的に良好（皮肉）",
+    "梗": "精神状态良好",
+    "英语": "Mentally doing great (ironic)"
+  },
+  {
+    "record_id": "reczz28NwdJvSeSh",
+    "ID": "78",
+    "中文": "早上充满干劲，晚上情绪低落",
+    "日语": "朝は元気、夜は落ち込み",
+    "梗": "早F晚E",
+    "英语": "F in the morning, E at night (upbeat then down)"
+  },
+  {
+    "record_id": "reczz28NwdJvTXMB",
+    "ID": "79",
+    "中文": "「击毙你」的萌化谐音",
+    "日语": "撃つぞ（可愛い言い換え）",
+    "梗": "鸡哔你",
+    "英语": "I'll get you (cutesy pun on 击毙)"
+  },
+  {
+    "record_id": "reczz28NwdJvU94b",
+    "ID": "80",
+    "中文": "在糟糕的基础上硬做美化",
+    "日语": "クソに花を彫る",
+    "梗": "屎上雕花",
+    "英语": "Carving flowers on a turd"
+  },
+  {
+    "record_id": "reczz28NwdJvUlWp",
+    "ID": "81",
+    "中文": "极度无语",
+    "日语": "もう完全に言葉が出ない",
+    "梗": "一整个大无语",
+    "英语": "Utterly speechless"
+  },
+  {
+    "record_id": "reczz28NwdJvTeC4",
+    "ID": "82",
+    "中文": "人生转折的起点",
+    "日语": "運命の歯車が回り始める",
+    "梗": "命运的齿轮开始转动",
+    "英语": "The gears of fate start turning"
+  },
+  {
+    "record_id": "reczz28NwdJvTw9c",
+    "ID": "83",
+    "中文": "用网络数据对比中外生活成本",
+    "日语": "サイバー照合（生活費の比較）",
+    "梗": "赛博对账",
+    "英语": "Cyber reconciliation (comparing living costs online)"
+  },
+  {
+    "record_id": "reczz28NwdJvUPA8",
+    "ID": "84",
+    "中文": "江苏省城市足球联赛",
+    "日语": "江蘇スーパーリーグ",
+    "梗": "苏超",
+    "英语": "Jiangsu Super League (city football league)"
+  },
+  {
+    "record_id": "reczz28NwdJvUS6r",
+    "ID": "85",
+    "中文": "二次元周边经济",
+    "日语": "グッズ経済",
+    "梗": "谷子经济",
+    "英语": "Merch economy"
+  },
+  {
+    "record_id": "reczz28NwdJvT6vi",
+    "ID": "86",
+    "中文": "老年群体的社会贡献",
+    "日语": "シルバーパワー",
+    "梗": "银发力量",
+    "英语": "Silver power (seniors' contribution)"
+  },
+  {
+    "record_id": "reczz28NwdJvTkV6",
+    "ID": "87",
+    "中文": "判断极其准确（王濛的解说梗）",
+    "日语": "私の目は物差しだ（絶対に正確）",
+    "梗": "我的眼睛就是尺",
+    "英语": "My eyes are the ruler (spot-on judgment)"
+  },
+  {
+    "record_id": "reczz28NwdJvTdOv",
+    "ID": "88",
+    "中文": "麻木了，无语到极点",
+    "日语": "もう麻痺した",
+    "梗": "麻了",
+    "英语": "Numb; done with it"
+  },
+  {
+    "record_id": "reczz28NwdJvTvMF",
+    "ID": "89",
+    "中文": "太不合常理，荒唐",
+    "日语": "ありえない",
+    "梗": "离谱",
+    "英语": "Outrageous; absurd"
+  },
+  {
+    "record_id": "reczz28NwdJvTHP1",
+    "ID": "90",
+    "中文": "表现很差，掉链子",
+    "日语": "ダメダメ",
+    "梗": "拉胯",
+    "英语": "Underperforming; lame"
+  },
+  {
+    "record_id": "reczz28NwdJvU91K",
+    "ID": "91",
+    "中文": "完全掌控、稳稳拿住",
+    "日语": "掌握した",
+    "梗": "拿捏",
+    "英语": "Nailed it; completely under control"
+  },
+  {
+    "record_id": "reczz28NwdJvTmFo",
+    "ID": "92",
+    "中文": "我羡慕嫉妒了",
+    "日语": "羨ましすぎる",
+    "梗": "我酸了",
+    "英语": "I'm jealous"
+  },
+  {
+    "record_id": "reczz28NwdJvSAuD",
+    "ID": "93",
+    "中文": "被安利，产生购买欲",
+    "日语": "欲しくなる",
+    "梗": "种草",
+    "英语": "Being tempted to buy"
+  },
+  {
+    "record_id": "reczz28NwdJvVjTJ",
+    "ID": "94",
+    "中文": "忍不住买买买",
+    "日语": "衝動買い",
+    "梗": "剁手",
+    "英语": "Impulse buying"
+  },
+  {
+    "record_id": "reczz28NwdJvVDBv",
+    "ID": "95",
+    "中文": "穷到没钱吃饭",
+    "日语": "土を食べる（お金がない）",
+    "梗": "吃土",
+    "英语": "Broke; living on dirt"
+  },
+  {
+    "record_id": "reczz28NwdJvSYyZ",
+    "ID": "96",
+    "中文": "戳到痛处",
+    "日语": "心に刺さる",
+    "梗": "扎心了",
+    "英语": "That cuts deep"
+  },
+  {
+    "record_id": "reczz28NwdJvVAjk",
+    "ID": "97",
+    "中文": "加油、给力",
+    "日语": "がんばれ！",
+    "梗": "奥利给",
+    "英语": "Go for it!"
+  },
+  {
+    "record_id": "reczz28NwdJvVNHw",
+    "ID": "98",
+    "中文": "让人看不懂的行为",
+    "日语": "迷惑行為",
+    "梗": "迷惑行为",
+    "英语": "Baffling behavior"
+  },
+  {
+    "record_id": "reczz28NwdJvURH9",
+    "ID": "99",
+    "中文": "被公司压榨的上班族",
+    "日语": "社畜",
+    "梗": "社畜",
+    "英语": "Corporate slave"
+  },
+  {
+    "record_id": "reczz28NwdJvVjXj",
+    "ID": "100",
+    "中文": "自我消耗式的过度思考",
+    "日语": "精神的消耗",
+    "梗": "精神内耗",
+    "英语": "Mental internal friction; overthinking"
   }
 ]

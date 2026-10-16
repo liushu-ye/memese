@@ -51,7 +51,7 @@ The Eternal God        ← 点「Eternal」
 **整套是零运行时成本的：**
 
 - 词表由 GitHub Actions 在**你改表格时**用 LLM 生成一次，产出静态 `words.json`
-- **发音音频预先合成好打包进 APK**（231 个词，2.4 MB），不依赖手机 TTS 引擎
+- **发音音频预先合成好打包进 APK**（495 个词，4.4 MB），不依赖手机 TTS 引擎
 - App 只查本地 Map、只播本地音频 —— **点一万次也是 0 token、0 网络、0 延迟**
 - 数据没变时连那一次 LLM 调用都会跳过
 
@@ -171,7 +171,7 @@ memese/
 │   │       ├── FeedbackDialog.kt      反馈弹窗（QQ 群）
 │   │       ├── Theme.kt               Material 3 主题（品牌粉 #EC407A）
 │   │       └── Labels.kt              语言显示名 / BCP-47
-│   ├── assets/audio/                  231 个单词发音（2.4 MB，离线可用）
+│   ├── assets/audio/                  495 个单词发音（4.4 MB，离线可用）
 │   └── res/mipmap-*dpi/               自适应图标（5 个密度）
 ├── data/
 │   ├── memes.json                     梗数据（CI 从飞书同步）

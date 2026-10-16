@@ -42,14 +42,45 @@ pip install edge-tts
 ## 用法
 
 ```bash
-# 只补缺失的（幂等，重跑几乎不耗时）
+# Edge（首选，神经音色最好）：只补缺失的，幂等
 python tools/audio/generate_audio.py
 
-# 全部重新生成（换音色时用）
+# Edge：全部重新生成（换音色、或想统一来源时用）
 python tools/audio/generate_audio.py --force
+
+# Google（Edge 被限流时的替补）
+node tools/audio/generate_audio_google.mjs
+
+# 生成后必跑：逐文件核对（大小 + mp3 头）
+node tools/audio/check_audio.mjs
 ```
 
-生成 231 个词约需 2–4 分钟（并发 4）。
+## ⚠️ Edge 会被 IP 级限流
+
+实测：跑到约 **230 个请求**后开始返回 `403 Invalid response status`，
+而且**不是瞬时的** —— 隔一段时间单发请求仍然 403。
+
+被封后有三个选择：
+
+| 方案 | 音质 | 说明 |
+|---|---|---|
+| **Google 翻译 TTS** | 中上 | `generate_audio_google.mjs`，无需 key |
+| **Windows SAPI** | 较机械 | 完全离线。本机有 `Microsoft Haruka Desktop`(ja) / `Zira Desktop`(en) |
+| **等解封** | 最好 | 之后 `generate_audio.py --force` 统一 |
+
+**来源不一致会导致同一批词有两个声音**，介意的就统一用一个 provider。
+
+## ⚠️ 0 字节空壳陷阱
+
+`edge_tts.save()` 在收到 403 时**会先建好文件再失败**，留下 0 字节空壳。
+如果幂等判断只写 `os.path.exists()`，空壳会被当成"已完成"而永远跳过，
+清单还会虚报条目数。
+
+实测踩过：脚本报「成功 137/285」，清单却写 495 条 —— 两个数字自相矛盾，
+逐文件核对才发现 247 个是 0 字节。
+
+**规矩：生成后必须跑 `check_audio.mjs` 逐文件核对，不能信脚本汇总。**
+（脚本现在也会在失败时清掉空壳，并且清单只收「大小达标」的文件。）
 
 ## 文件命名
 
@@ -70,9 +101,9 @@ python tools/audio/generate_audio.py --force
 
 | | 文件数 | 体积 |
 |---|---|---|
-| 英语 | 137 | 1.41 MB |
-| 日语 | 94 | 0.98 MB |
-| 合计 | 231 | **2.39 MB** |
+| 英语 | 285 | 约 2.5 MB |
+| 日语 | 210 | 约 1.9 MB |
+| 合计 | 495 | **4.42 MB** |
 
 APK 从 9.47 MB 涨到 11.56 MB，可接受。
 

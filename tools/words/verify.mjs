@@ -50,7 +50,15 @@ function segmentCjk(text, dict, maxLen) {
   return merged;
 }
 
-const OK_PUNCT = /^[\s、。，！？（）()？…「」【】!?,.—]+$/;
+const OK_PUNCT = /^[\s、。，！？（）()？…「」【】!?,.—・〜~]+$/;
+
+/**
+ * 占位符不算缺口（与 generate.mjs 保持一致）。
+ * 「古代ギリシャの○○の神」里的 ○○ 本来就该点不动，
+ * 若把它当缺口，CI 每次都会误判"有缺词"从而白调一次 LLM。
+ */
+const PLACEHOLDER = /^[○×〇□*?？]+$/;
+const ignorable = (s) => OK_PUNCT.test(s) || PLACEHOLDER.test(s);
 
 let jaTotal = 0, jaMatched = 0;
 const unmatchedRuns = new Map();
@@ -64,11 +72,11 @@ for (const m of memes) {
   jaMatched += segs.length - gaps.length;
 
   const rendered = segs.map((s) => (s.w ? `[${s.t}]` : s.t)).join('');
-  const flag = gaps.length && !gaps.every((g) => OK_PUNCT.test(g.t)) ? '  ⚠️' : '';
+  const flag = gaps.length && !gaps.every((g) => ignorable(g.t)) ? '  ⚠️' : '';
   console.log(`  ${String(m.ID).padStart(2)} ${rendered}${flag}`);
 
   for (const g of gaps) {
-    if (OK_PUNCT.test(g.t)) continue;
+    if (ignorable(g.t)) continue;
     unmatchedRuns.set(g.t, (unmatchedRuns.get(g.t) ?? 0) + 1);
   }
 }

@@ -1,7 +1,9 @@
 {
   "_meta": {
-    "sourceHash": "99573c8d2b02d437",
-    "note": "sourceHash 与 data/memes.json 对应；一致且无缺词时，CI 会跳过 LLM 调用（0 token）。"
+    "sourceHash": "66e4ff848c927226",
+    "note": "sourceHash 与 data/memes.json 对应；一致且无缺词时，CI 会跳过 LLM 调用（0 token）。",
+    "updatedAt": "2026-10-16T04:10:49.023Z",
+    "generator": "手工补词（无 LLM key 时）"
   },
   "_comment": "词表。可手工编辑 —— CI 的自动生成流程会保留已有词条，不会覆盖你的修改。",
   "_schema": {
@@ -9,238 +11,1987 @@
     "ja": "{ 词: { reading: 假名读音, zh: 中文释义 } }"
   },
   "en": {
-    "a": { "reading": "/ə/", "zh": "一个（不定冠词）" },
-    "absolutely": { "reading": "/ˈæbsəluːtli/", "zh": "绝对地；完全地" },
-    "absurd": { "reading": "/əbˈsɜːrd/", "zh": "荒谬的；荒唐的" },
-    "after": { "reading": "/ˈæftər/", "zh": "在……之后" },
-    "ah": { "reading": "/ɑː/", "zh": "啊（感叹）" },
-    "amazing": { "reading": "/əˈmeɪzɪŋ/", "zh": "令人惊叹的；了不起的" },
-    "and": { "reading": "/ænd/", "zh": "和；并且" },
-    "anxiety": { "reading": "/æŋˈzaɪəti/", "zh": "焦虑；不安" },
-    "apart": { "reading": "/əˈpɑːrt/", "zh": "分开地；破碎地" },
-    "at": { "reading": "/æt/", "zh": "在（某处/某时）" },
-    "away": { "reading": "/əˈweɪ/", "zh": "离开；走开" },
-    "awesome": { "reading": "/ˈɔːsəm/", "zh": "很棒的；了不起的" },
-    "back": { "reading": "/bæk/", "zh": "回来；背部" },
-    "baffling": { "reading": "/ˈbæflɪŋ/", "zh": "令人困惑的" },
-    "beast": { "reading": "/biːst/", "zh": "野兽；牲口" },
-    "begone": { "reading": "/bɪˈɡɔːn/", "zh": "滚开（古语/戏谑）" },
-    "broken": { "reading": "/ˈbroʊkən/", "zh": "破碎的；被击垮的" },
-    "buddhist-like": { "reading": "/ˈbʊdɪst laɪk/", "zh": "佛系的；像佛教徒一样淡然的" },
-    "burden": { "reading": "/ˈbɜːrdn/", "zh": "负担；重担" },
-    "but": { "reading": "/bʌt/", "zh": "但是" },
-    "butterfly": { "reading": "/ˈbʌtərflaɪ/", "zh": "蝴蝶（social butterfly＝社交达人）" },
-    "camper": { "reading": "/ˈkæmpər/", "zh": "露营者（camper＝蹲点偷袭的人）" },
-    "can't": { "reading": "/kænt/", "zh": "不能（cannot 的缩写）" },
-    "care": { "reading": "/ker/", "zh": "在乎；关心" },
-    "chow": { "reading": "/tʃaʊ/", "zh": "食物；大吃（chow down＝开吃）" },
-    "city": { "reading": "/ˈsɪti/", "zh": "城市；洋气、时髦（网络义）" },
-    "clown": { "reading": "/klaʊn/", "zh": "小丑" },
-    "cry": { "reading": "/kraɪ/", "zh": "哭；喊叫" },
-    "cute": { "reading": "/kjuːt/", "zh": "可爱的" },
-    "dead": { "reading": "/ded/", "zh": "死的（俚语：笑死/萌死）" },
-    "death": { "reading": "/deθ/", "zh": "死亡" },
-    "defenses": { "reading": "/dɪˈfensɪz/", "zh": "防线；防御（心理防线）" },
-    "don't": { "reading": "/doʊnt/", "zh": "不（do not 的缩写）" },
-    "down": { "reading": "/daʊn/", "zh": "向下；低落" },
-    "drone": { "reading": "/droʊn/", "zh": "雄蜂；嗡嗡作响的人（office drone＝社畜）" },
-    "earner": { "reading": "/ˈɜːrnər/", "zh": "挣钱的人（wage earner＝打工人）" },
-    "emo": { "reading": "/ˈiːmoʊ/", "zh": "情绪化的；低落伤感" },
-    "emotionally": { "reading": "/ɪˈmoʊʃənəli/", "zh": "情感上地" },
-    "envy": { "reading": "/ˈenvi/", "zh": "羡慕；嫉妒" },
-    "eternal": { "reading": "/ɪˈtɜːrnl/", "zh": "永恒的；不朽的" },
-    "ethics": { "reading": "/ˈeθɪks/", "zh": "道德；武德" },
-    "expressive": { "reading": "/ɪkˈspresɪv/", "zh": "善于表达的；感情外露的" },
-    "falling": { "reading": "/ˈfɔːlɪŋ/", "zh": "落下的；崩溃中的（fall apart＝崩溃）" },
-    "feeling": { "reading": "/ˈfiːlɪŋ/", "zh": "感觉；觉得" },
-    "flat": { "reading": "/flæt/", "zh": "平的；躺平的（lying flat）" },
-    "for": { "reading": "/fɔːr/", "zh": "为了；对于" },
-    "generation": { "reading": "/ˌdʒenəˈreɪʃn/", "zh": "一代；世代" },
-    "get": { "reading": "/ɡet/", "zh": "得到；明白（don't get it＝搞不懂）" },
-    "giving": { "reading": "/ˈɡɪvɪŋ/", "zh": "给予；付出" },
-    "god": { "reading": "/ɡɑːd/", "zh": "神；上帝" },
-    "good": { "reading": "/ɡʊd/", "zh": "好的" },
-    "grapes": { "reading": "/ɡreɪps/", "zh": "葡萄（sour grapes＝酸葡萄）" },
-    "greek": { "reading": "/ɡriːk/", "zh": "希腊的" },
-    "green": { "reading": "/ɡriːn/", "zh": "绿色的（green with envy＝嫉妒得发绿）" },
-    "haha": { "reading": "/ˈhɑːhɑː/", "zh": "哈哈" },
-    "handle": { "reading": "/ˈhændl/", "zh": "处理；应付" },
-    "hard": { "reading": "/hɑːrd/", "zh": "困难的；硬的" },
-    "hardship": { "reading": "/ˈhɑːrdʃɪp/", "zh": "苦难；艰辛" },
-    "having": { "reading": "/ˈhævɪŋ/", "zh": "拥有；经历（have a hard time）" },
-    "hip": { "reading": "/hɪp/", "zh": "时髦的；洋气的" },
-    "hold": { "reading": "/hoʊld/", "zh": "握住；忍住（hold it together＝撑住）" },
-    "how": { "reading": "/haʊ/", "zh": "如何；多么" },
-    "humblebrag": { "reading": "/ˈhʌmblbræɡ/", "zh": "凡尔赛；以抱怨口吻炫耀" },
-    "i'm": { "reading": "/aɪm/", "zh": "我是（I am 的缩写）" },
-    "impressed": { "reading": "/ɪmˈprest/", "zh": "印象深刻的；佩服的" },
-    "indifference": { "reading": "/ɪnˈdɪfrəns/", "zh": "漠不关心；无所谓" },
-    "intense": { "reading": "/ɪnˈtens/", "zh": "强烈的；情感浓烈的" },
-    "involution": { "reading": "/ˌɪnvəˈluːʃn/", "zh": "内卷（过度内部竞争）" },
-    "is": { "reading": "/ɪz/", "zh": "是" },
-    "it": { "reading": "/ɪt/", "zh": "它" },
-    "laid-back": { "reading": "/ˌleɪd ˈbæk/", "zh": "松弛的；悠闲的" },
-    "laughing": { "reading": "/ˈlæfɪŋ/", "zh": "大笑（laughing to death＝笑死）" },
-    "letting": { "reading": "/ˈletɪŋ/", "zh": "任由（let it rot＝摆烂）" },
-    "lmao": { "reading": "/ˌel em eɪ ˈoʊ/", "zh": "笑死（laughing my ass off 缩写）" },
-    "lol": { "reading": "/ˌel oʊ ˈel/", "zh": "大笑（laughing out loud 缩写）" },
-    "look": { "reading": "/lʊk/", "zh": "看（look away＝移开视线）" },
-    "lying": { "reading": "/ˈlaɪɪŋ/", "zh": "躺着的；说谎的（lying flat＝躺平）" },
-    "martial": { "reading": "/ˈmɑːrʃl/", "zh": "武术的（martial ethics＝武德）" },
-    "me": { "reading": "/miː/", "zh": "我（宾格）" },
-    "mean": { "reading": "/miːn/", "zh": "刻薄的；意思是" },
-    "mesmerized": { "reading": "/ˈmezməraɪzd/", "zh": "被迷住的；看呆的" },
-    "mild-mannered": { "reading": "/ˌmaɪld ˈmænərd/", "zh": "性情温和的" },
-    "my": { "reading": "/maɪ/", "zh": "我的" },
-    "nice": { "reading": "/naɪs/", "zh": "好的；不错的" },
-    "no": { "reading": "/noʊ/", "zh": "不；没有" },
-    "of": { "reading": "/əv/", "zh": "……的" },
-    "off": { "reading": "/ɔːf/", "zh": "离开；脱下" },
-    "office": { "reading": "/ˈɔːfɪs/", "zh": "办公室" },
-    "often": { "reading": "/ˈɔːfn/", "zh": "经常" },
-    "one": { "reading": "/wʌn/", "zh": "一个（Nice one!＝漂亮！）" },
-    "over": { "reading": "/ˈoʊvər/", "zh": "越过；结束（youth is over＝青春结束）" },
-    "overwhelmed": { "reading": "/ˌoʊvərˈwelmd/", "zh": "被压垮的；情绪崩溃的" },
-    "person": { "reading": "/ˈpɜːrsn/", "zh": "人" },
-    "play": { "reading": "/pleɪ/", "zh": "玩；比赛" },
-    "player": { "reading": "/ˈpleɪər/", "zh": "玩家；选手" },
-    "real": { "reading": "/riːl/", "zh": "真的（for real?＝真的假的？）" },
-    "reap": { "reading": "/riːp/", "zh": "收割（you reap what you sow＝自食其果）" },
-    "refuse": { "reading": "/rɪˈfjuːz/", "zh": "拒绝" },
-    "resigned": { "reading": "/rɪˈzaɪnd/", "zh": "无可奈何的；认命的" },
-    "rising": { "reading": "/ˈraɪzɪŋ/", "zh": "崛起的；新兴的" },
-    "rot": { "reading": "/rɑːt/", "zh": "腐烂（let it rot＝破罐破摔）" },
-    "sad": { "reading": "/sæd/", "zh": "悲伤的" },
-    "sarcastic": { "reading": "/sɑːrˈkæstɪk/", "zh": "讽刺的；反讽的" },
-    "self-imposed": { "reading": "/ˌself ɪmˈpoʊzd/", "zh": "自己强加的" },
-    "slacking": { "reading": "/ˈslækɪŋ/", "zh": "偷懒；摸鱼" },
-    "sly": { "reading": "/slaɪ/", "zh": "狡猾的" },
-    "sneaky": { "reading": "/ˈsniːki/", "zh": "鬼祟的；阴险的" },
-    "so": { "reading": "/soʊ/", "zh": "如此；所以" },
-    "social": { "reading": "/ˈsoʊʃl/", "zh": "社交的；社会的" },
-    "sour": { "reading": "/ˈsaʊər/", "zh": "酸的（sour grapes＝酸葡萄）" },
-    "sow": { "reading": "/soʊ/", "zh": "播种" },
-    "stealth": { "reading": "/stelθ/", "zh": "偷偷摸摸（stealth vibes＝偷感）" },
-    "stench": { "reading": "/stentʃ/", "zh": "恶臭" },
-    "such": { "reading": "/sʌtʃ/", "zh": "这样的；如此的" },
-    "take": { "reading": "/teɪk/", "zh": "拿；花费（take care of yourself＝好自为之）" },
-    "thank": { "reading": "/θæŋk/", "zh": "感谢" },
-    "the": { "reading": "/ðə/", "zh": "这；那（定冠词）" },
-    "time": { "reading": "/taɪm/", "zh": "时间" },
-    "to": { "reading": "/tuː/", "zh": "到；向（不定式符号）" },
-    "toast": { "reading": "/toʊst/", "zh": "吐司；完蛋（we're toast＝我们完了）" },
-    "together": { "reading": "/təˈɡeðər/", "zh": "一起（hold it together＝撑住）" },
-    "too": { "reading": "/tuː/", "zh": "太；也" },
-    "unfair": { "reading": "/ˌʌnˈfer/", "zh": "不公平的" },
-    "up": { "reading": "/ʌp/", "zh": "向上；完全地" },
-    "vibe": { "reading": "/vaɪb/", "zh": "氛围；感觉" },
-    "vibes": { "reading": "/vaɪbz/", "zh": "氛围；气质（vibe 的复数）" },
-    "vowing": { "reading": "/ˈvaʊɪŋ/", "zh": "发誓（vow 的现在分词）" },
-    "wage": { "reading": "/weɪdʒ/", "zh": "工资" },
-    "wanting": { "reading": "/ˈwɑːntɪŋ/", "zh": "想要" },
-    "we're": { "reading": "/wɪr/", "zh": "我们是（we are 的缩写）" },
-    "what": { "reading": "/wʌt/", "zh": "什么" },
-    "with": { "reading": "/wɪð/", "zh": "和；带有" },
-    "work": { "reading": "/wɜːrk/", "zh": "工作" },
-    "x": { "reading": "/eks/", "zh": "某某（占位符，指代任意事物）" },
-    "you": { "reading": "/juː/", "zh": "你" },
-    "yourself": { "reading": "/jɔːrˈself/", "zh": "你自己" },
-    "youth": { "reading": "/juːθ/", "zh": "青春；年轻人" }
+    "a": {
+      "reading": "/ə/",
+      "zh": "一个（不定冠词）"
+    },
+    "absolutely": {
+      "reading": "/ˈæbsəluːtli/",
+      "zh": "绝对地；完全地"
+    },
+    "absurd": {
+      "reading": "/əbˈsɜːrd/",
+      "zh": "荒谬的；荒唐的"
+    },
+    "activity": {
+      "reading": "/ækˈtɪvəti/",
+      "zh": "活动"
+    },
+    "affectionate": {
+      "reading": "/əˈfekʃənət/",
+      "zh": "充满爱意的"
+    },
+    "after": {
+      "reading": "/ˈæftər/",
+      "zh": "在……之后"
+    },
+    "ah": {
+      "reading": "/ɑː/",
+      "zh": "啊（感叹）"
+    },
+    "ahead": {
+      "reading": "/əˈhed/",
+      "zh": "在前面（far ahead＝遥遥领先）"
+    },
+    "amazing": {
+      "reading": "/əˈmeɪzɪŋ/",
+      "zh": "令人惊叹的；了不起的"
+    },
+    "an": {
+      "reading": "/æn/",
+      "zh": "一个（不定冠词，用于元音前）"
+    },
+    "ancestral": {
+      "reading": "/ænˈsestrəl/",
+      "zh": "祖先的（ancestral temple＝太庙）"
+    },
+    "and": {
+      "reading": "/ænd/",
+      "zh": "和；并且"
+    },
+    "anxiety": {
+      "reading": "/æŋˈzaɪəti/",
+      "zh": "焦虑；不安"
+    },
+    "apart": {
+      "reading": "/əˈpɑːrt/",
+      "zh": "分开地；破碎地"
+    },
+    "are": {
+      "reading": "/ɑːr/",
+      "zh": "是（be 动词复数）"
+    },
+    "as": {
+      "reading": "/æz/",
+      "zh": "作为；如同"
+    },
+    "at": {
+      "reading": "/æt/",
+      "zh": "在（某处/某时）"
+    },
+    "away": {
+      "reading": "/əˈweɪ/",
+      "zh": "离开；走开"
+    },
+    "awesome": {
+      "reading": "/ˈɔːsəm/",
+      "zh": "很棒的；了不起的"
+    },
+    "back": {
+      "reading": "/bæk/",
+      "zh": "回来；背部"
+    },
+    "baffling": {
+      "reading": "/ˈbæflɪŋ/",
+      "zh": "令人困惑的"
+    },
+    "beast": {
+      "reading": "/biːst/",
+      "zh": "野兽；牲口"
+    },
+    "begone": {
+      "reading": "/bɪˈɡɔːn/",
+      "zh": "滚开（古语/戏谑）"
+    },
+    "behavior": {
+      "reading": "/bɪˈheɪvjər/",
+      "zh": "行为"
+    },
+    "being": {
+      "reading": "/ˈbiːɪŋ/",
+      "zh": "处于（be 的现在分词）"
+    },
+    "broke": {
+      "reading": "/broʊk/",
+      "zh": "破产的；没钱的"
+    },
+    "broken": {
+      "reading": "/ˈbroʊkən/",
+      "zh": "破碎的；被击垮的"
+    },
+    "buddhist-like": {
+      "reading": "/ˈbʊdɪst laɪk/",
+      "zh": "佛系的；像佛教徒一样淡然的"
+    },
+    "buddy": {
+      "reading": "/ˈbʌdi/",
+      "zh": "伙伴；搭子"
+    },
+    "burden": {
+      "reading": "/ˈbɜːrdn/",
+      "zh": "负担；重担"
+    },
+    "but": {
+      "reading": "/bʌt/",
+      "zh": "但是"
+    },
+    "butterfly": {
+      "reading": "/ˈbʌtərflaɪ/",
+      "zh": "蝴蝶（social butterfly＝社交达人）"
+    },
+    "buy": {
+      "reading": "/baɪ/",
+      "zh": "买"
+    },
+    "buying": {
+      "reading": "/ˈbaɪɪŋ/",
+      "zh": "购买"
+    },
+    "camper": {
+      "reading": "/ˈkæmpər/",
+      "zh": "露营者（camper＝蹲点偷袭的人）"
+    },
+    "can't": {
+      "reading": "/kænt/",
+      "zh": "不能（cannot 的缩写）"
+    },
+    "care": {
+      "reading": "/ker/",
+      "zh": "在乎；关心"
+    },
+    "caring": {
+      "reading": "/ˈkerɪŋ/",
+      "zh": "照顾；照料"
+    },
+    "carving": {
+      "reading": "/ˈkɑːrvɪŋ/",
+      "zh": "雕刻"
+    },
+    "chicken": {
+      "reading": "/ˈtʃɪkɪn/",
+      "zh": "鸡（chicken parenting＝鸡娃）"
+    },
+    "child": {
+      "reading": "/tʃaɪld/",
+      "zh": "孩子"
+    },
+    "chow": {
+      "reading": "/tʃaʊ/",
+      "zh": "食物；大吃（chow down＝开吃）"
+    },
+    "city": {
+      "reading": "/ˈsɪti/",
+      "zh": "城市；洋气、时髦（网络义）"
+    },
+    "clown": {
+      "reading": "/klaʊn/",
+      "zh": "小丑"
+    },
+    "comparing": {
+      "reading": "/kəmˈperɪŋ/",
+      "zh": "比较"
+    },
+    "completely": {
+      "reading": "/kəmˈpliːtli/",
+      "zh": "完全地"
+    },
+    "compression": {
+      "reading": "/kəmˈpreʃn/",
+      "zh": "压缩"
+    },
+    "contribution": {
+      "reading": "/ˌkɑːntrɪˈbjuːʃn/",
+      "zh": "贡献"
+    },
+    "control": {
+      "reading": "/kənˈtroʊl/",
+      "zh": "控制；掌控"
+    },
+    "cool": {
+      "reading": "/kuːl/",
+      "zh": "酷的；帅的"
+    },
+    "corporate": {
+      "reading": "/ˈkɔːrpərət/",
+      "zh": "公司的（corporate slave＝社畜）"
+    },
+    "costs": {
+      "reading": "/kɔːsts/",
+      "zh": "花费；成本"
+    },
+    "cry": {
+      "reading": "/kraɪ/",
+      "zh": "哭；喊叫"
+    },
+    "cute": {
+      "reading": "/kjuːt/",
+      "zh": "可爱的"
+    },
+    "cutesy": {
+      "reading": "/ˈkjuːtsi/",
+      "zh": "装可爱的；卖萌的"
+    },
+    "cuts": {
+      "reading": "/kʌts/",
+      "zh": "切；刺痛（cuts deep＝扎心）"
+    },
+    "cyber": {
+      "reading": "/ˈsaɪbər/",
+      "zh": "网络的"
+    },
+    "dead": {
+      "reading": "/ded/",
+      "zh": "死的（俚语：笑死/萌死）"
+    },
+    "death": {
+      "reading": "/deθ/",
+      "zh": "死亡"
+    },
+    "deep": {
+      "reading": "/diːp/",
+      "zh": "深的"
+    },
+    "defenses": {
+      "reading": "/dɪˈfensɪz/",
+      "zh": "防线；防御（心理防线）"
+    },
+    "degree": {
+      "reading": "/dɪˈɡriː/",
+      "zh": "学位；程度"
+    },
+    "deserves": {
+      "reading": "/dɪˈzɜːrvz/",
+      "zh": "值得；配得上"
+    },
+    "digital": {
+      "reading": "/ˈdɪdʒɪtl/",
+      "zh": "数字的；电子的"
+    },
+    "dining": {
+      "reading": "/ˈdaɪnɪŋ/",
+      "zh": "用餐"
+    },
+    "dirt": {
+      "reading": "/dɜːrt/",
+      "zh": "泥土（living on dirt＝吃土）"
+    },
+    "doing": {
+      "reading": "/ˈduːɪŋ/",
+      "zh": "做（doing great＝过得好）"
+    },
+    "don't": {
+      "reading": "/doʊnt/",
+      "zh": "不（do not 的缩写）"
+    },
+    "done": {
+      "reading": "/dʌn/",
+      "zh": "完了的（done with it＝受够了）"
+    },
+    "dopamine": {
+      "reading": "/ˈdoʊpəmiːn/",
+      "zh": "多巴胺"
+    },
+    "down": {
+      "reading": "/daʊn/",
+      "zh": "向下；低落"
+    },
+    "dressing": {
+      "reading": "/ˈdresɪŋ/",
+      "zh": "穿搭；打扮"
+    },
+    "drone": {
+      "reading": "/droʊn/",
+      "zh": "雄蜂；嗡嗡作响的人（office drone＝社畜）"
+    },
+    "e": {
+      "reading": "/iː/",
+      "zh": "字母 E（早F晚E 里的 E）"
+    },
+    "earner": {
+      "reading": "/ˈɜːrnər/",
+      "zh": "挣钱的人（wage earner＝打工人）"
+    },
+    "eating": {
+      "reading": "/ˈiːtɪŋ/",
+      "zh": "吃"
+    },
+    "economy": {
+      "reading": "/ɪˈkɑːnəmi/",
+      "zh": "经济"
+    },
+    "emo": {
+      "reading": "/ˈiːmoʊ/",
+      "zh": "情绪化的；低落伤感"
+    },
+    "emotional": {
+      "reading": "/ɪˈmoʊʃənl/",
+      "zh": "情绪的"
+    },
+    "emotionally": {
+      "reading": "/ɪˈmoʊʃənəli/",
+      "zh": "情感上地"
+    },
+    "envy": {
+      "reading": "/ˈenvi/",
+      "zh": "羡慕；嫉妒"
+    },
+    "eternal": {
+      "reading": "/ɪˈtɜːrnl/",
+      "zh": "永恒的；不朽的"
+    },
+    "ethics": {
+      "reading": "/ˈeθɪks/",
+      "zh": "道德；武德"
+    },
+    "expressive": {
+      "reading": "/ɪkˈspresɪv/",
+      "zh": "善于表达的；感情外露的"
+    },
+    "extreme": {
+      "reading": "/ɪkˈstriːm/",
+      "zh": "极端的"
+    },
+    "eyes": {
+      "reading": "/aɪz/",
+      "zh": "眼睛（复数）"
+    },
+    "f": {
+      "reading": "/ef/",
+      "zh": "字母 F（早F晚E 里的 F）"
+    },
+    "falling": {
+      "reading": "/ˈfɔːlɪŋ/",
+      "zh": "落下的；崩溃中的（fall apart＝崩溃）"
+    },
+    "far": {
+      "reading": "/fɑːr/",
+      "zh": "远"
+    },
+    "fate": {
+      "reading": "/feɪt/",
+      "zh": "命运"
+    },
+    "feeling": {
+      "reading": "/ˈfiːlɪŋ/",
+      "zh": "感觉；觉得"
+    },
+    "flat": {
+      "reading": "/flæt/",
+      "zh": "平的；躺平的（lying flat）"
+    },
+    "flowers": {
+      "reading": "/ˈflaʊərz/",
+      "zh": "花（复数）"
+    },
+    "football": {
+      "reading": "/ˈfʊtbɔːl/",
+      "zh": "足球"
+    },
+    "for": {
+      "reading": "/fɔːr/",
+      "zh": "为了；对于"
+    },
+    "fortune": {
+      "reading": "/ˈfɔːrtʃən/",
+      "zh": "财运；财富"
+    },
+    "friction": {
+      "reading": "/ˈfrɪkʃn/",
+      "zh": "摩擦（mental friction＝内耗）"
+    },
+    "from": {
+      "reading": "/frʌm/",
+      "zh": "从；来自"
+    },
+    "full-time": {
+      "reading": "/ˌfʊl ˈtaɪm/",
+      "zh": "全职的"
+    },
+    "gears": {
+      "reading": "/ɡɪrz/",
+      "zh": "齿轮"
+    },
+    "geezer": {
+      "reading": "/ˈɡiːzər/",
+      "zh": "老头（英式俚语）"
+    },
+    "generation": {
+      "reading": "/ˌdʒenəˈreɪʃn/",
+      "zh": "一代；世代"
+    },
+    "get": {
+      "reading": "/ɡet/",
+      "zh": "得到；明白（don't get it＝搞不懂）"
+    },
+    "giving": {
+      "reading": "/ˈɡɪvɪŋ/",
+      "zh": "给予；付出"
+    },
+    "go": {
+      "reading": "/ɡoʊ/",
+      "zh": "去（go for it＝加油）"
+    },
+    "god": {
+      "reading": "/ɡɑːd/",
+      "zh": "神；上帝"
+    },
+    "good": {
+      "reading": "/ɡʊd/",
+      "zh": "好的"
+    },
+    "goods": {
+      "reading": "/ɡʊdz/",
+      "zh": "商品；周边"
+    },
+    "gown": {
+      "reading": "/ɡaʊn/",
+      "zh": "长衫；长袍"
+    },
+    "grapes": {
+      "reading": "/ɡreɪps/",
+      "zh": "葡萄（sour grapes＝酸葡萄）"
+    },
+    "great": {
+      "reading": "/ɡreɪt/",
+      "zh": "很好的"
+    },
+    "greek": {
+      "reading": "/ɡriːk/",
+      "zh": "希腊的"
+    },
+    "green": {
+      "reading": "/ɡriːn/",
+      "zh": "绿色的（green with envy＝嫉妒得发绿）"
+    },
+    "hachimi": {
+      "reading": "/ˈhɑːtʃɪmi/",
+      "zh": "哈基米（日语「蜂蜜」音译，指小猫）"
+    },
+    "haha": {
+      "reading": "/ˈhɑːhɑː/",
+      "zh": "哈哈"
+    },
+    "half-joking": {
+      "reading": "/ˌhæf ˈdʒoʊkɪŋ/",
+      "zh": "半开玩笑的"
+    },
+    "handle": {
+      "reading": "/ˈhændl/",
+      "zh": "处理；应付"
+    },
+    "hard": {
+      "reading": "/hɑːrd/",
+      "zh": "困难的；硬的"
+    },
+    "hardship": {
+      "reading": "/ˈhɑːrdʃɪp/",
+      "zh": "苦难；艰辛"
+    },
+    "having": {
+      "reading": "/ˈhævɪŋ/",
+      "zh": "拥有；经历（have a hard time）"
+    },
+    "hip": {
+      "reading": "/hɪp/",
+      "zh": "时髦的；洋气的"
+    },
+    "hold": {
+      "reading": "/hoʊld/",
+      "zh": "握住；忍住（hold it together＝撑住）"
+    },
+    "how": {
+      "reading": "/haʊ/",
+      "zh": "如何；多么"
+    },
+    "huge": {
+      "reading": "/hjuːdʒ/",
+      "zh": "巨大的"
+    },
+    "humblebrag": {
+      "reading": "/ˈhʌmblbræɡ/",
+      "zh": "凡尔赛；以抱怨口吻炫耀"
+    },
+    "hyper-intensive": {
+      "reading": "/ˌhaɪpər ɪnˈtensɪv/",
+      "zh": "超高强度的"
+    },
+    "i'll": {
+      "reading": "/aɪl/",
+      "zh": "我将（I will 的缩写）"
+    },
+    "i'm": {
+      "reading": "/aɪm/",
+      "zh": "我是（I am 的缩写）"
+    },
+    "immersive": {
+      "reading": "/ɪˈmɜːrsɪv/",
+      "zh": "沉浸式的"
+    },
+    "impressed": {
+      "reading": "/ɪmˈprest/",
+      "zh": "印象深刻的；佩服的"
+    },
+    "impulse": {
+      "reading": "/ˈɪmpʌls/",
+      "zh": "冲动"
+    },
+    "in": {
+      "reading": "/ɪn/",
+      "zh": "在……里"
+    },
+    "indifference": {
+      "reading": "/ɪnˈdɪfrəns/",
+      "zh": "漠不关心；无所谓"
+    },
+    "intense": {
+      "reading": "/ɪnˈtens/",
+      "zh": "强烈的；情感浓烈的"
+    },
+    "internal": {
+      "reading": "/ɪnˈtɜːrnl/",
+      "zh": "内部的"
+    },
+    "involution": {
+      "reading": "/ˌɪnvəˈluːʃn/",
+      "zh": "内卷（过度内部竞争）"
+    },
+    "ironic": {
+      "reading": "/aɪˈrɑːnɪk/",
+      "zh": "反讽的"
+    },
+    "is": {
+      "reading": "/ɪz/",
+      "zh": "是"
+    },
+    "it": {
+      "reading": "/ɪt/",
+      "zh": "它"
+    },
+    "japanese": {
+      "reading": "/ˌdʒæpəˈniːz/",
+      "zh": "日本的；日语"
+    },
+    "jealous": {
+      "reading": "/ˈdʒeləs/",
+      "zh": "嫉妒的"
+    },
+    "jiangsu": {
+      "reading": "/ˈdʒjɑːŋsuː/",
+      "zh": "江苏"
+    },
+    "jokey": {
+      "reading": "/ˈdʒoʊki/",
+      "zh": "开玩笑的；戏谑的"
+    },
+    "judgment": {
+      "reading": "/ˈdʒʌdʒmənt/",
+      "zh": "判断"
+    },
+    "kitty": {
+      "reading": "/ˈkɪti/",
+      "zh": "小猫"
+    },
+    "kong": {
+      "reading": "/kɔːŋ/",
+      "zh": "孔（人名姓氏）"
+    },
+    "laid-back": {
+      "reading": "/ˌleɪd ˈbæk/",
+      "zh": "松弛的；悠闲的"
+    },
+    "lame": {
+      "reading": "/leɪm/",
+      "zh": "逊的；不给力的"
+    },
+    "laughing": {
+      "reading": "/ˈlæfɪŋ/",
+      "zh": "大笑（laughing to death＝笑死）"
+    },
+    "league": {
+      "reading": "/liːɡ/",
+      "zh": "联赛；联盟"
+    },
+    "leagues": {
+      "reading": "/liːɡz/",
+      "zh": "里格（长度单位，leagues ahead＝遥遥领先）"
+    },
+    "letting": {
+      "reading": "/ˈletɪŋ/",
+      "zh": "任由（let it rot＝摆烂）"
+    },
+    "little": {
+      "reading": "/ˈlɪtl/",
+      "zh": "小的"
+    },
+    "living": {
+      "reading": "/ˈlɪvɪŋ/",
+      "zh": "生活；活着"
+    },
+    "lmao": {
+      "reading": "/ˌel em eɪ ˈoʊ/",
+      "zh": "笑死（laughing my ass off 缩写）"
+    },
+    "lol": {
+      "reading": "/ˌel oʊ ˈel/",
+      "zh": "大笑（laughing out loud 缩写）"
+    },
+    "long": {
+      "reading": "/lɔːŋ/",
+      "zh": "长的"
+    },
+    "look": {
+      "reading": "/lʊk/",
+      "zh": "看（look away＝移开视线）"
+    },
+    "lying": {
+      "reading": "/ˈlaɪɪŋ/",
+      "zh": "躺着的；说谎的（lying flat＝躺平）"
+    },
+    "martial": {
+      "reading": "/ˈmɑːrʃl/",
+      "zh": "武术的（martial ethics＝武德）"
+    },
+    "me": {
+      "reading": "/miː/",
+      "zh": "我（宾格）"
+    },
+    "mean": {
+      "reading": "/miːn/",
+      "zh": "刻薄的；意思是"
+    },
+    "mental": {
+      "reading": "/ˈmentl/",
+      "zh": "心理的；精神的"
+    },
+    "mentally": {
+      "reading": "/ˈmentəli/",
+      "zh": "精神上地"
+    },
+    "merch": {
+      "reading": "/mɜːrtʃ/",
+      "zh": "周边商品（merchandise 缩写）"
+    },
+    "merit": {
+      "reading": "/ˈmerɪt/",
+      "zh": "功绩；功劳"
+    },
+    "mesmerized": {
+      "reading": "/ˈmezməraɪzd/",
+      "zh": "被迷住的；看呆的"
+    },
+    "mild-mannered": {
+      "reading": "/ˌmaɪld ˈmænərd/",
+      "zh": "性情温和的"
+    },
+    "monkey": {
+      "reading": "/ˈmʌŋki/",
+      "zh": "猴子"
+    },
+    "morning": {
+      "reading": "/ˈmɔːrnɪŋ/",
+      "zh": "早上"
+    },
+    "my": {
+      "reading": "/maɪ/",
+      "zh": "我的"
+    },
+    "nailed": {
+      "reading": "/neɪld/",
+      "zh": "搞定了（nail it 的过去式）"
+    },
+    "name": {
+      "reading": "/neɪm/",
+      "zh": "名字"
+    },
+    "nice": {
+      "reading": "/naɪs/",
+      "zh": "好的；不错的"
+    },
+    "night": {
+      "reading": "/naɪt/",
+      "zh": "晚上"
+    },
+    "no": {
+      "reading": "/noʊ/",
+      "zh": "不；没有"
+    },
+    "nomad": {
+      "reading": "/ˈnoʊmæd/",
+      "zh": "游牧者；流浪者"
+    },
+    "numb": {
+      "reading": "/nʌm/",
+      "zh": "麻木的"
+    },
+    "of": {
+      "reading": "/əv/",
+      "zh": "……的"
+    },
+    "off": {
+      "reading": "/ɔːf/",
+      "zh": "离开；脱下"
+    },
+    "office": {
+      "reading": "/ˈɔːfɪs/",
+      "zh": "办公室"
+    },
+    "often": {
+      "reading": "/ˈɔːfn/",
+      "zh": "经常"
+    },
+    "old": {
+      "reading": "/oʊld/",
+      "zh": "老的；旧的"
+    },
+    "on": {
+      "reading": "/ɑːn/",
+      "zh": "在……上"
+    },
+    "one": {
+      "reading": "/wʌn/",
+      "zh": "一个（Nice one!＝漂亮！）"
+    },
+    "online": {
+      "reading": "/ˌɑːnˈlaɪn/",
+      "zh": "在线的；网上的"
+    },
+    "outrageous": {
+      "reading": "/aʊtˈreɪdʒəs/",
+      "zh": "离谱的；骇人的"
+    },
+    "over": {
+      "reading": "/ˈoʊvər/",
+      "zh": "越过；结束（youth is over＝青春结束）"
+    },
+    "overthinking": {
+      "reading": "/ˌoʊvərˈθɪŋkɪŋ/",
+      "zh": "想太多；过度思考"
+    },
+    "overwhelmed": {
+      "reading": "/ˌoʊvərˈwelmd/",
+      "zh": "被压垮的；情绪崩溃的"
+    },
+    "overworked": {
+      "reading": "/ˌoʊvərˈwɜːrkt/",
+      "zh": "过劳的"
+    },
+    "parenting": {
+      "reading": "/ˈperəntɪŋ/",
+      "zh": "育儿；教养"
+    },
+    "parents": {
+      "reading": "/ˈperənts/",
+      "zh": "父母"
+    },
+    "person": {
+      "reading": "/ˈpɜːrsn/",
+      "zh": "人"
+    },
+    "phonetic": {
+      "reading": "/fəˈnetɪk/",
+      "zh": "谐音的；语音的"
+    },
+    "pickles": {
+      "reading": "/ˈpɪklz/",
+      "zh": "腌菜；下饭菜"
+    },
+    "place": {
+      "reading": "/pleɪs/",
+      "zh": "地方；位置"
+    },
+    "play": {
+      "reading": "/pleɪ/",
+      "zh": "玩；比赛"
+    },
+    "player": {
+      "reading": "/ˈpleɪər/",
+      "zh": "玩家；选手"
+    },
+    "point": {
+      "reading": "/pɔɪnt/",
+      "zh": "要点；重点"
+    },
+    "polite": {
+      "reading": "/pəˈlaɪt/",
+      "zh": "有礼貌的"
+    },
+    "potato": {
+      "reading": "/pəˈteɪtoʊ/",
+      "zh": "土豆；马铃薯"
+    },
+    "power": {
+      "reading": "/ˈpaʊər/",
+      "zh": "力量"
+    },
+    "pun": {
+      "reading": "/pʌn/",
+      "zh": "双关；谐音梗"
+    },
+    "puppy": {
+      "reading": "/ˈpʌpi/",
+      "zh": "小狗；幼犬"
+    },
+    "real": {
+      "reading": "/riːl/",
+      "zh": "真的（for real?＝真的假的？）"
+    },
+    "reap": {
+      "reading": "/riːp/",
+      "zh": "收割（you reap what you sow＝自食其果）"
+    },
+    "rebuke": {
+      "reading": "/rɪˈbjuːk/",
+      "zh": "责备；斥责"
+    },
+    "reconciliation": {
+      "reading": "/ˌrekənsɪliˈeɪʃn/",
+      "zh": "对账；核对"
+    },
+    "refuse": {
+      "reading": "/rɪˈfjuːz/",
+      "zh": "拒绝"
+    },
+    "resigned": {
+      "reading": "/rɪˈzaɪnd/",
+      "zh": "无可奈何的；认命的"
+    },
+    "rising": {
+      "reading": "/ˈraɪzɪŋ/",
+      "zh": "崛起的；新兴的"
+    },
+    "rot": {
+      "reading": "/rɑːt/",
+      "zh": "腐烂（let it rot＝破罐破摔）"
+    },
+    "ruler": {
+      "reading": "/ˈruːlər/",
+      "zh": "尺子；统治者"
+    },
+    "sad": {
+      "reading": "/sæd/",
+      "zh": "悲伤的"
+    },
+    "sarcastic": {
+      "reading": "/sɑːrˈkæstɪk/",
+      "zh": "讽刺的；反讽的"
+    },
+    "scene-stealer": {
+      "reading": "/ˈsiːn ˌstiːlər/",
+      "zh": "抢戏的人；显眼包"
+    },
+    "self-deprecating": {
+      "reading": "/ˌself ˈdeprəkeɪtɪŋ/",
+      "zh": "自嘲的"
+    },
+    "self-imposed": {
+      "reading": "/ˌself ɪmˈpoʊzd/",
+      "zh": "自己强加的"
+    },
+    "seniors'": {
+      "reading": "/ˈsiːniərz/",
+      "zh": "老年人的"
+    },
+    "show-off": {
+      "reading": "/ˈʃoʊ ɔːf/",
+      "zh": "爱炫耀的人；显眼包"
+    },
+    "silver": {
+      "reading": "/ˈsɪlvər/",
+      "zh": "银色的（silver power＝银发力量）"
+    },
+    "slacking": {
+      "reading": "/ˈslækɪŋ/",
+      "zh": "偷懒；摸鱼"
+    },
+    "slave": {
+      "reading": "/sleɪv/",
+      "zh": "奴隶"
+    },
+    "sly": {
+      "reading": "/slaɪ/",
+      "zh": "狡猾的"
+    },
+    "sneaky": {
+      "reading": "/ˈsniːki/",
+      "zh": "鬼祟的；阴险的"
+    },
+    "so": {
+      "reading": "/soʊ/",
+      "zh": "如此；所以"
+    },
+    "social": {
+      "reading": "/ˈsoʊʃl/",
+      "zh": "社交的；社会的"
+    },
+    "sour": {
+      "reading": "/ˈsaʊər/",
+      "zh": "酸的（sour grapes＝酸葡萄）"
+    },
+    "southern": {
+      "reading": "/ˈsʌðərn/",
+      "zh": "南方的"
+    },
+    "sow": {
+      "reading": "/soʊ/",
+      "zh": "播种"
+    },
+    "special-forces-style": {
+      "reading": "/ˈspeʃl ˈfɔːrsɪz ˌstaɪl/",
+      "zh": "特种兵式的"
+    },
+    "speechless": {
+      "reading": "/ˈspiːtʃləs/",
+      "zh": "说不出话的；无语的"
+    },
+    "spelling": {
+      "reading": "/ˈspelɪŋ/",
+      "zh": "拼写"
+    },
+    "spot-on": {
+      "reading": "/ˌspɑːt ˈɑːn/",
+      "zh": "完全正确的；精准的"
+    },
+    "start": {
+      "reading": "/stɑːrt/",
+      "zh": "开始"
+    },
+    "stealth": {
+      "reading": "/stelθ/",
+      "zh": "偷偷摸摸（stealth vibes＝偷感）"
+    },
+    "stench": {
+      "reading": "/stentʃ/",
+      "zh": "恶臭"
+    },
+    "such": {
+      "reading": "/sʌtʃ/",
+      "zh": "这样的；如此的"
+    },
+    "super": {
+      "reading": "/ˈsuːpər/",
+      "zh": "超级的"
+    },
+    "take": {
+      "reading": "/teɪk/",
+      "zh": "拿；花费（take care of yourself＝好自为之）"
+    },
+    "temple": {
+      "reading": "/ˈtempl/",
+      "zh": "庙；太庙"
+    },
+    "tempted": {
+      "reading": "/ˈtemptɪd/",
+      "zh": "被诱惑的；心动的"
+    },
+    "thank": {
+      "reading": "/θæŋk/",
+      "zh": "感谢"
+    },
+    "that": {
+      "reading": "/ðæt/",
+      "zh": "那；那个"
+    },
+    "the": {
+      "reading": "/ðə/",
+      "zh": "这；那（定冠词）"
+    },
+    "then": {
+      "reading": "/ðen/",
+      "zh": "然后；那么"
+    },
+    "time": {
+      "reading": "/taɪm/",
+      "zh": "时间"
+    },
+    "to": {
+      "reading": "/tuː/",
+      "zh": "到；向（不定式符号）"
+    },
+    "toast": {
+      "reading": "/toʊst/",
+      "zh": "吐司；完蛋（we're toast＝我们完了）"
+    },
+    "together": {
+      "reading": "/təˈɡeðər/",
+      "zh": "一起（hold it together＝撑住）"
+    },
+    "too": {
+      "reading": "/tuː/",
+      "zh": "太；也"
+    },
+    "tourists": {
+      "reading": "/ˈtʊrɪsts/",
+      "zh": "游客"
+    },
+    "travel": {
+      "reading": "/ˈtrævl/",
+      "zh": "旅行"
+    },
+    "turd": {
+      "reading": "/tɜːrd/",
+      "zh": "屎；粪（粗俗）"
+    },
+    "turning": {
+      "reading": "/ˈtɜːrnɪŋ/",
+      "zh": "转动；旋转"
+    },
+    "tutoring": {
+      "reading": "/ˈtuːtərɪŋ/",
+      "zh": "补习；辅导"
+    },
+    "under": {
+      "reading": "/ˈʌndər/",
+      "zh": "在……下面"
+    },
+    "underperforming": {
+      "reading": "/ˌʌndərpərˈfɔːrmɪŋ/",
+      "zh": "表现不佳的；拉胯的"
+    },
+    "unfair": {
+      "reading": "/ˌʌnˈfer/",
+      "zh": "不公平的"
+    },
+    "unshakable": {
+      "reading": "/ʌnˈʃeɪkəbl/",
+      "zh": "无法动摇的；脱不掉的"
+    },
+    "up": {
+      "reading": "/ʌp/",
+      "zh": "向上；完全地"
+    },
+    "upbeat": {
+      "reading": "/ˈʌpbiːt/",
+      "zh": "积极乐观的"
+    },
+    "utterly": {
+      "reading": "/ˈʌtərli/",
+      "zh": "完全地；彻底地"
+    },
+    "value": {
+      "reading": "/ˈvæljuː/",
+      "zh": "价值"
+    },
+    "vibe": {
+      "reading": "/vaɪb/",
+      "zh": "氛围；感觉"
+    },
+    "vibes": {
+      "reading": "/vaɪbz/",
+      "zh": "氛围；气质（vibe 的复数）"
+    },
+    "video": {
+      "reading": "/ˈvɪdioʊ/",
+      "zh": "视频"
+    },
+    "vowing": {
+      "reading": "/ˈvaʊɪŋ/",
+      "zh": "发誓（vow 的现在分词）"
+    },
+    "wage": {
+      "reading": "/weɪdʒ/",
+      "zh": "工资"
+    },
+    "wanting": {
+      "reading": "/ˈwɑːntɪŋ/",
+      "zh": "想要"
+    },
+    "watch": {
+      "reading": "/wɑːtʃ/",
+      "zh": "看；观看"
+    },
+    "we're": {
+      "reading": "/wɪr/",
+      "zh": "我们是（we are 的缩写）"
+    },
+    "what": {
+      "reading": "/wʌt/",
+      "zh": "什么"
+    },
+    "while": {
+      "reading": "/waɪl/",
+      "zh": "当……的时候"
+    },
+    "whole": {
+      "reading": "/hoʊl/",
+      "zh": "整个的；全部的"
+    },
+    "windfall": {
+      "reading": "/ˈwɪndfɔːl/",
+      "zh": "意外之财；天降横财"
+    },
+    "with": {
+      "reading": "/wɪð/",
+      "zh": "和；带有"
+    },
+    "work": {
+      "reading": "/wɜːrk/",
+      "zh": "工作"
+    },
+    "workers": {
+      "reading": "/ˈwɜːrkərz/",
+      "zh": "工人；工作者"
+    },
+    "x": {
+      "reading": "/eks/",
+      "zh": "某某（占位符，指代任意事物）"
+    },
+    "yiji's": {
+      "reading": "/ˈjiːdʒiz/",
+      "zh": "乙己的（人名「孔乙己」）"
+    },
+    "you": {
+      "reading": "/juː/",
+      "zh": "你"
+    },
+    "yourself": {
+      "reading": "/jɔːrˈself/",
+      "zh": "你自己"
+    },
+    "youth": {
+      "reading": "/juːθ/",
+      "zh": "青春；年轻人"
+    }
   },
   "ja": {
-    "永遠": { "reading": "えいえん", "zh": "永远；永恒" },
-    "の": { "reading": "の", "zh": "的（所属助词）" },
-    "神": { "reading": "かみ", "zh": "神" },
-    "ああ": { "reading": "ああ", "zh": "啊（感叹）" },
-    "死んだ": { "reading": "しんだ", "zh": "死了（死ぬ 的过去式）" },
-    "可愛すぎて": { "reading": "かわいすぎて", "zh": "太可爱了（可愛い＋すぎる）" },
-    "笑い死ぬ": { "reading": "わらいしぬ", "zh": "笑死" },
-    "すごい": { "reading": "すごい", "zh": "厉害；了不起" },
-    "お見事": { "reading": "おみごと", "zh": "漂亮！干得漂亮" },
-    "大笑い": { "reading": "おおわらい", "zh": "大笑" },
-    "メンタル": { "reading": "めんたる", "zh": "心理；精神状态" },
-    "が": { "reading": "が", "zh": "（主格助词）" },
-    "やられる": { "reading": "やられる", "zh": "被搞垮；被击溃" },
-    "寝そべり族": { "reading": "ねそべりぞく", "zh": "躺平族" },
-    "インボリューション": { "reading": "いんぼりゅーしょん", "zh": "内卷" },
-    "過当競争": { "reading": "かとうきょうそう", "zh": "过度竞争" },
-    "社会的": { "reading": "しゃかいてき", "zh": "社会性的" },
-    "死亡": { "reading": "しぼう", "zh": "死亡" },
-    "情緒": { "reading": "じょうちょ", "zh": "情绪" },
-    "不安定": { "reading": "ふあんてい", "zh": "不稳定" },
-    "堪えきれない": { "reading": "たえきれない", "zh": "忍不住；受不了" },
-    "卑怯者": { "reading": "ひきょうもの", "zh": "卑鄙的人；胆小鬼" },
-    "意地悪": { "reading": "いじわる", "zh": "坏心眼；使坏" },
-    "すぎ": { "reading": "すぎ", "zh": "过于……（接尾词）" },
-    "飯": { "reading": "めし", "zh": "饭（口语）" },
-    "を": { "reading": "を", "zh": "（宾格助词）" },
-    "食う": { "reading": "くう", "zh": "吃（粗俗说法）" },
-    "サラリーマン": { "reading": "さらりーまん", "zh": "上班族；工薪族" },
-    "後浪": { "reading": "こうろう", "zh": "后浪；新一代年轻人" },
-    "新世代": { "reading": "しんせだい", "zh": "新世代" },
-    "ベルサイユ文学": { "reading": "べるさいゆぶんがく", "zh": "凡尔赛文学（炫耀式谦虚）" },
-    "謙遜アピール": { "reading": "けんそんあぴーる", "zh": "故作谦虚的自我展示" },
-    "レモン人間": { "reading": "れもんにんげん", "zh": "柠檬人；爱嫉妒的人" },
-    "嫉妬深い": { "reading": "しっとぶかい", "zh": "嫉妒心强的" },
-    "人": { "reading": "ひと", "zh": "人" },
-    "心": { "reading": "こころ", "zh": "心；内心" },
-    "砕けた": { "reading": "くだけた", "zh": "碎了（砕ける 的过去式）" },
-    "俺": { "reading": "おれ", "zh": "我（男性自称，粗犷）" },
-    "青春": { "reading": "せいしゅん", "zh": "青春" },
-    "戻った": { "reading": "もどった", "zh": "回来了（戻る 的过去式）" },
-    "終わった": { "reading": "おわった", "zh": "结束了（終わる 的过去式）" },
-    "ピエロ": { "reading": "ぴえろ", "zh": "小丑" },
-    "は": { "reading": "は", "zh": "（主题助词）" },
-    "自分": { "reading": "じぶん", "zh": "自己" },
-    "だった": { "reading": "だった", "zh": "是（だ 的过去式）" },
-    "武徳": { "reading": "ぶとく", "zh": "武德" },
-    "わきまえない": { "reading": "わきまえない", "zh": "不懂分寸；不知分寸" },
-    "好自為之": { "reading": "こうじいし", "zh": "好自为之（中文借词）" },
-    "自業自得": { "reading": "じごうじとく", "zh": "自作自受" },
-    "サンキュー": { "reading": "さんきゅー", "zh": "谢谢（thank you 的日语音译）" },
-    "呆れ": { "reading": "あきれ", "zh": "傻眼；无语" },
-    "最高": { "reading": "さいこう", "zh": "最棒；最高" },
-    "すぎる": { "reading": "すぎる", "zh": "过于……；太……" },
-    "お手上げ": { "reading": "おてあげ", "zh": "束手无策；没辙了" },
-    "マジ": { "reading": "まじ", "zh": "真的；认真的" },
-    "ガチ": { "reading": "がち", "zh": "真的；来真的" },
-    "退散": { "reading": "たいさん", "zh": "退散；滚开" },
-    "ありがとう": { "reading": "ありがとう", "zh": "谢谢" },
-    "皮肉": { "reading": "ひにく", "zh": "讽刺；挖苦" },
-    "社交": { "reading": "しゃこう", "zh": "社交" },
-    "不安症": { "reading": "ふあんしょう", "zh": "……恐惧症；焦虑症" },
-    "達人": { "reading": "たつじん", "zh": "达人；高手" },
-    "サボり": { "reading": "さぼり", "zh": "偷懒；摸鱼" },
-    "投げやり": { "reading": "なげやり", "zh": "破罐破摔；自暴自弃" },
-    "仏系": { "reading": "ぶっけい", "zh": "佛系" },
-    "こだわらない": { "reading": "こだわらない", "zh": "不讲究；不执着" },
-    "目": { "reading": "め", "zh": "眼睛" },
-    "離せない": { "reading": "はなせない", "zh": "离不开；移不开" },
-    "牛馬": { "reading": "ぎゅうば", "zh": "牛马；做牛做马的人" },
-    "こき使われる": { "reading": "こきつかわれる", "zh": "被使唤；被压榨" },
-    "労働者": { "reading": "ろうどうしゃ", "zh": "劳动者；工人" },
-    "臭": { "reading": "しゅう", "zh": "……味；……气" },
-    "リラックス": { "reading": "りらっくす", "zh": "放松" },
-    "感": { "reading": "かん", "zh": "……感；感觉" },
-    "カオス": { "reading": "かおす", "zh": "混沌；混乱" },
-    "意味不明": { "reading": "いみふめい", "zh": "莫名其妙；看不懂" },
-    "こそこそ": { "reading": "こそこそ", "zh": "鬼鬼祟祟；偷偷摸摸" },
-    "淡白": { "reading": "たんぱく", "zh": "淡泊；不浓烈" },
-    "な": { "reading": "な", "zh": "（形容动词连体形助词）" },
-    "濃い": { "reading": "こい", "zh": "浓的；强烈的" },
-    "シティ": { "reading": "してぃ", "zh": "城市；洋气" },
-    "っぽい": { "reading": "っぽい", "zh": "像……样的；有……感的" },
-    "わざわざ": { "reading": "わざわざ", "zh": "特意；专门" },
-    "苦労": { "reading": "くろう", "zh": "辛苦；操劳" },
-    "する": { "reading": "する", "zh": "做（サ变动词）" },
-    "古代": { "reading": "こだい", "zh": "古代" },
-    "ギリシャ": { "reading": "ぎりしゃ", "zh": "希腊" },
-    "結局": { "reading": "けっきょく", "zh": "结果；到头来" },
-    "うまい": { "reading": "うまい", "zh": "好吃；高明" },
-    "前言撤回": { "reading": "ぜんげんてっかい", "zh": "收回前言；打脸" },
-    "つらくて": { "reading": "つらくて", "zh": "难受得（つらい 的て形）" },
-    "泣きたい": { "reading": "なきたい", "zh": "想哭" },
-    "つらすぎる": { "reading": "つらすぎる", "zh": "太难了；太痛苦了" },
-    "だけど": { "reading": "だけど", "zh": "但是；不过" }
+    "愛称": {
+      "reading": "あいしょう",
+      "zh": "爱称；昵称"
+    },
+    "俺": {
+      "reading": "おれ",
+      "zh": "我（男性自称，粗犷）"
+    },
+    "卑怯者": {
+      "reading": "ひきょうもの",
+      "zh": "卑鄙的人；胆小鬼"
+    },
+    "比較": {
+      "reading": "ひかく",
+      "zh": "比较"
+    },
+    "不安定": {
+      "reading": "ふあんてい",
+      "zh": "不稳定"
+    },
+    "不安症": {
+      "reading": "ふあんしょう",
+      "zh": "……恐惧症；焦虑症"
+    },
+    "朝": {
+      "reading": "あさ",
+      "zh": "早上"
+    },
+    "歯車": {
+      "reading": "はぐるま",
+      "zh": "齿轮"
+    },
+    "衝動買い": {
+      "reading": "しょうどうがい",
+      "zh": "冲动购物"
+    },
+    "臭": {
+      "reading": "しゅう",
+      "zh": "……味；……气"
+    },
+    "出ない": {
+      "reading": "でない",
+      "zh": "出不来；说不出（出る 的否定）"
+    },
+    "出る": {
+      "reading": "でる",
+      "zh": "出来；出现"
+    },
+    "刺さる": {
+      "reading": "ささる",
+      "zh": "刺入；扎心"
+    },
+    "達人": {
+      "reading": "たつじん",
+      "zh": "达人；高手"
+    },
+    "大金運": {
+      "reading": "だいきんうん",
+      "zh": "巨大的财运"
+    },
+    "大笑い": {
+      "reading": "おおわらい",
+      "zh": "大笑"
+    },
+    "呆れ": {
+      "reading": "あきれ",
+      "zh": "傻眼；无语"
+    },
+    "淡白": {
+      "reading": "たんぱく",
+      "zh": "淡泊；不浓烈"
+    },
+    "弾丸旅行": {
+      "reading": "だんがんりょこう",
+      "zh": "闪电式旅行"
+    },
+    "得る": {
+      "reading": "える",
+      "zh": "获得；得到"
+    },
+    "的": {
+      "reading": "てき",
+      "zh": "……的（接尾词）"
+    },
+    "電子たくあん": {
+      "reading": "でんしたくあん",
+      "zh": "电子榨菜（下饭视频）"
+    },
+    "彫る": {
+      "reading": "ほる",
+      "zh": "雕刻"
+    },
+    "動画": {
+      "reading": "どうが",
+      "zh": "视频"
+    },
+    "飯": {
+      "reading": "めし",
+      "zh": "饭（口语）"
+    },
+    "仏系": {
+      "reading": "ぶっけい",
+      "zh": "佛系"
+    },
+    "感": {
+      "reading": "かん",
+      "zh": "……感；感觉"
+    },
+    "古代": {
+      "reading": "こだい",
+      "zh": "古代"
+    },
+    "観光客": {
+      "reading": "かんこうきゃく",
+      "zh": "游客"
+    },
+    "過当競争": {
+      "reading": "かとうきょうそう",
+      "zh": "过度竞争"
+    },
+    "好自為之": {
+      "reading": "こうじいし",
+      "zh": "好自为之（中文借词）"
+    },
+    "後浪": {
+      "reading": "こうろう",
+      "zh": "后浪；新一代年轻人"
+    },
+    "花": {
+      "reading": "はな",
+      "zh": "花"
+    },
+    "回り始める": {
+      "reading": "まわりはじめる",
+      "zh": "开始转动"
+    },
+    "活動": {
+      "reading": "かつどう",
+      "zh": "活动"
+    },
+    "撃つ": {
+      "reading": "うつ",
+      "zh": "射击；开枪"
+    },
+    "嫉妬深い": {
+      "reading": "しっとぶかい",
+      "zh": "嫉妒心强的"
+    },
+    "江蘇": {
+      "reading": "こうそ",
+      "zh": "江苏"
+    },
+    "降って湧いた": {
+      "reading": "ふってわいた",
+      "zh": "从天而降的（惯用）"
+    },
+    "教育ママ": {
+      "reading": "きょういくまま",
+      "zh": "教育妈妈（鸡娃家长）"
+    },
+    "結局": {
+      "reading": "けっきょく",
+      "zh": "结果；到头来"
+    },
+    "詰め込む": {
+      "reading": "つめこむ",
+      "zh": "硬塞；填鸭式灌输"
+    },
+    "経済": {
+      "reading": "けいざい",
+      "zh": "经济"
+    },
+    "精神的": {
+      "reading": "せいしんてき",
+      "zh": "精神上的"
+    },
+    "絶対に": {
+      "reading": "ぜったいに",
+      "zh": "绝对地"
+    },
+    "堪えきれない": {
+      "reading": "たえきれない",
+      "zh": "忍不住；受不了"
+    },
+    "可愛い": {
+      "reading": "かわいい",
+      "zh": "可爱"
+    },
+    "可愛すぎて": {
+      "reading": "かわいすぎて",
+      "zh": "太可爱了（可愛い＋すぎる）"
+    },
+    "孔乙己": {
+      "reading": "こういき",
+      "zh": "孔乙己（鲁迅小说人物）"
+    },
+    "苦労": {
+      "reading": "くろう",
+      "zh": "辛苦；操劳"
+    },
+    "労働者": {
+      "reading": "ろうどうしゃ",
+      "zh": "劳动者；工人"
+    },
+    "離せない": {
+      "reading": "はなせない",
+      "zh": "离不开；移不开"
+    },
+    "礼儀": {
+      "reading": "れいぎ",
+      "zh": "礼貌；礼节"
+    },
+    "良好": {
+      "reading": "りょうこう",
+      "zh": "良好"
+    },
+    "落ち込み": {
+      "reading": "おちこみ",
+      "zh": "情绪低落"
+    },
+    "麻痺": {
+      "reading": "まひ",
+      "zh": "麻痹；麻木"
+    },
+    "買う": {
+      "reading": "かう",
+      "zh": "买"
+    },
+    "没入型": {
+      "reading": "ぼつにゅうがた",
+      "zh": "沉浸式"
+    },
+    "迷惑行為": {
+      "reading": "めいわくこうい",
+      "zh": "令人困扰的行为"
+    },
+    "目": {
+      "reading": "め",
+      "zh": "眼睛"
+    },
+    "目立ちたがり屋": {
+      "reading": "めだちたがりや",
+      "zh": "爱出风头的人"
+    },
+    "南方": {
+      "reading": "なんぽう",
+      "zh": "南方"
+    },
+    "牛馬": {
+      "reading": "ぎゅうば",
+      "zh": "牛马；做牛做马的人"
+    },
+    "濃い": {
+      "reading": "こい",
+      "zh": "浓的；强烈的"
+    },
+    "皮肉": {
+      "reading": "ひにく",
+      "zh": "讽刺；挖苦"
+    },
+    "泣きたい": {
+      "reading": "なきたい",
+      "zh": "想哭"
+    },
+    "謙遜アピール": {
+      "reading": "けんそんあぴーる",
+      "zh": "故作谦虚的自我展示"
+    },
+    "前言撤回": {
+      "reading": "ぜんげんてっかい",
+      "zh": "收回前言；打脸"
+    },
+    "乾杯": {
+      "reading": "かんぱい",
+      "zh": "干杯"
+    },
+    "親": {
+      "reading": "おや",
+      "zh": "父母；双亲"
+    },
+    "寝そべり族": {
+      "reading": "ねそべりぞく",
+      "zh": "躺平族"
+    },
+    "青春": {
+      "reading": "せいしゅん",
+      "zh": "青春"
+    },
+    "情緒": {
+      "reading": "じょうちょ",
+      "zh": "情绪"
+    },
+    "人": {
+      "reading": "ひと",
+      "zh": "人"
+    },
+    "冗談": {
+      "reading": "じょうだん",
+      "zh": "玩笑"
+    },
+    "社畜": {
+      "reading": "しゃちく",
+      "zh": "社畜"
+    },
+    "社会的": {
+      "reading": "しゃかいてき",
+      "zh": "社会性的"
+    },
+    "社交": {
+      "reading": "しゃこう",
+      "zh": "社交"
+    },
+    "神": {
+      "reading": "かみ",
+      "zh": "神"
+    },
+    "生活費": {
+      "reading": "せいかつひ",
+      "zh": "生活费"
+    },
+    "食事": {
+      "reading": "しょくじ",
+      "zh": "用餐；饭"
+    },
+    "食う": {
+      "reading": "くう",
+      "zh": "吃（粗俗说法）"
+    },
+    "食べる": {
+      "reading": "たべる",
+      "zh": "吃"
+    },
+    "世話": {
+      "reading": "せわ",
+      "zh": "照顾；照料"
+    },
+    "私": {
+      "reading": "わたし",
+      "zh": "我"
+    },
+    "死亡": {
+      "reading": "しぼう",
+      "zh": "死亡"
+    },
+    "死んだ": {
+      "reading": "しんだ",
+      "zh": "死了（死ぬ 的过去式）"
+    },
+    "祀られる": {
+      "reading": "まつられる",
+      "zh": "被供奉；被祭祀"
+    },
+    "価値": {
+      "reading": "かち",
+      "zh": "价值"
+    },
+    "砕けた": {
+      "reading": "くだけた",
+      "zh": "碎了（砕ける 的过去式）"
+    },
+    "鎖": {
+      "reading": "くさり",
+      "zh": "锁链；枷锁"
+    },
+    "太廟": {
+      "reading": "たいびょう",
+      "zh": "太庙"
+    },
+    "特定": {
+      "reading": "とくてい",
+      "zh": "特定；指定"
+    },
+    "特攻観光": {
+      "reading": "とっこうかんこう",
+      "zh": "极限压缩时间的观光"
+    },
+    "戻った": {
+      "reading": "もどった",
+      "zh": "回来了（戻る 的过去式）"
+    },
+    "投げやり": {
+      "reading": "なげやり",
+      "zh": "破罐破摔；自暴自弃"
+    },
+    "土": {
+      "reading": "つち",
+      "zh": "土；泥土"
+    },
+    "退散": {
+      "reading": "たいさん",
+      "zh": "退散；滚开"
+    },
+    "完全に": {
+      "reading": "かんぜんに",
+      "zh": "完全地"
+    },
+    "武徳": {
+      "reading": "ぶとく",
+      "zh": "武德"
+    },
+    "物差し": {
+      "reading": "ものさし",
+      "zh": "尺子；标准"
+    },
+    "羨ましい": {
+      "reading": "うらやましい",
+      "zh": "羡慕的"
+    },
+    "羨ましすぎる": {
+      "reading": "うらやましすぎる",
+      "zh": "太让人羡慕了"
+    },
+    "相棒": {
+      "reading": "あいぼう",
+      "zh": "伙伴；搭档"
+    },
+    "相手": {
+      "reading": "あいて",
+      "zh": "对方；伙伴"
+    },
+    "消耗": {
+      "reading": "しょうもう",
+      "zh": "消耗；内耗"
+    },
+    "小芋": {
+      "reading": "こいも",
+      "zh": "小土豆（昵称）"
+    },
+    "笑い死ぬ": {
+      "reading": "わらいしぬ",
+      "zh": "笑死"
+    },
+    "心": {
+      "reading": "こころ",
+      "zh": "心；内心"
+    },
+    "新世代": {
+      "reading": "しんせだい",
+      "zh": "新世代"
+    },
+    "学歴": {
+      "reading": "がくれき",
+      "zh": "学历"
+    },
+    "言葉": {
+      "reading": "ことば",
+      "zh": "语言；话"
+    },
+    "言い換え": {
+      "reading": "いいかえ",
+      "zh": "换一种说法"
+    },
+    "要": {
+      "reading": "よう",
+      "zh": "要点；关键"
+    },
+    "夜": {
+      "reading": "よる",
+      "zh": "晚上"
+    },
+    "一緒に": {
+      "reading": "いっしょに",
+      "zh": "一起"
+    },
+    "意地悪": {
+      "reading": "いじわる",
+      "zh": "坏心眼；使坏"
+    },
+    "意味不明": {
+      "reading": "いみふめい",
+      "zh": "莫名其妙；看不懂"
+    },
+    "音訳": {
+      "reading": "おんやく",
+      "zh": "音译"
+    },
+    "永遠": {
+      "reading": "えいえん",
+      "zh": "永远；永恒"
+    },
+    "欲しい": {
+      "reading": "ほしい",
+      "zh": "想要"
+    },
+    "欲しくなる": {
+      "reading": "ほしくなる",
+      "zh": "变得想要"
+    },
+    "元気": {
+      "reading": "げんき",
+      "zh": "精神好；有活力"
+    },
+    "運命": {
+      "reading": "うんめい",
+      "zh": "命运"
+    },
+    "賛辞": {
+      "reading": "さんじ",
+      "zh": "赞美之词"
+    },
+    "長衫": {
+      "reading": "ちょうさん",
+      "zh": "长衫"
+    },
+    "掌握": {
+      "reading": "しょうあく",
+      "zh": "掌握；掌控"
+    },
+    "照合": {
+      "reading": "しょうごう",
+      "zh": "核对；对照"
+    },
+    "正確": {
+      "reading": "せいかく",
+      "zh": "准确"
+    },
+    "終わった": {
+      "reading": "おわった",
+      "zh": "结束了（終わる 的过去式）"
+    },
+    "専業子供": {
+      "reading": "せんぎょうこども",
+      "zh": "全职儿女"
+    },
+    "子ども": {
+      "reading": "こども",
+      "zh": "孩子"
+    },
+    "自嘲": {
+      "reading": "じちょう",
+      "zh": "自嘲"
+    },
+    "自分": {
+      "reading": "じぶん",
+      "zh": "自己"
+    },
+    "自業自得": {
+      "reading": "じごうじとく",
+      "zh": "自作自受"
+    },
+    "最大級": {
+      "reading": "さいだいきゅう",
+      "zh": "最高级别"
+    },
+    "最高": {
+      "reading": "さいこう",
+      "zh": "最棒；最高"
+    },
+    "ああ": {
+      "reading": "ああ",
+      "zh": "啊（感叹）"
+    },
+    "ありえない": {
+      "reading": "ありえない",
+      "zh": "不可能；离谱"
+    },
+    "ありがとう": {
+      "reading": "ありがとう",
+      "zh": "谢谢"
+    },
+    "ある": {
+      "reading": "ある",
+      "zh": "有；存在"
+    },
+    "イケてる": {
+      "reading": "いけてる",
+      "zh": "很酷；很帅"
+    },
+    "インボリューション": {
+      "reading": "いんぼりゅーしょん",
+      "zh": "内卷"
+    },
+    "うまい": {
+      "reading": "うまい",
+      "zh": "好吃；高明"
+    },
+    "お供": {
+      "reading": "おとも",
+      "zh": "陪伴；配着的东西"
+    },
+    "お見事": {
+      "reading": "おみごと",
+      "zh": "漂亮！干得漂亮"
+    },
+    "お金": {
+      "reading": "おかね",
+      "zh": "钱"
+    },
+    "お手上げ": {
+      "reading": "おてあげ",
+      "zh": "束手无策；没辙了"
+    },
+    "が": {
+      "reading": "が",
+      "zh": "（主格助词）"
+    },
+    "カオス": {
+      "reading": "かおす",
+      "zh": "混沌；混乱"
+    },
+    "ガチ": {
+      "reading": "がち",
+      "zh": "真的；来真的"
+    },
+    "がんばれ": {
+      "reading": "がんばれ",
+      "zh": "加油！"
+    },
+    "ギリシャ": {
+      "reading": "ぎりしゃ",
+      "zh": "希腊"
+    },
+    "クソ": {
+      "reading": "くそ",
+      "zh": "屎；该死的（粗俗）"
+    },
+    "グッズ": {
+      "reading": "ぐっず",
+      "zh": "周边商品"
+    },
+    "こき使われる": {
+      "reading": "こきつかわれる",
+      "zh": "被使唤；被压榨"
+    },
+    "こそこそ": {
+      "reading": "こそこそ",
+      "zh": "鬼鬼祟祟；偷偷摸摸"
+    },
+    "こだわらない": {
+      "reading": "こだわらない",
+      "zh": "不讲究；不执着"
+    },
+    "サイバー": {
+      "reading": "さいばー",
+      "zh": "网络的；赛博"
+    },
+    "サボり": {
+      "reading": "さぼり",
+      "zh": "偷懒；摸鱼"
+    },
+    "サラリーマン": {
+      "reading": "さらりーまん",
+      "zh": "上班族；工薪族"
+    },
+    "サル": {
+      "reading": "さる",
+      "zh": "猴子"
+    },
+    "サンキュー": {
+      "reading": "さんきゅー",
+      "zh": "谢谢（thank you 的日语音译）"
+    },
+    "ジジイ": {
+      "reading": "じじい",
+      "zh": "老头（粗俗）"
+    },
+    "した": {
+      "reading": "した",
+      "zh": "做了（する 的过去式）"
+    },
+    "シティ": {
+      "reading": "してぃ",
+      "zh": "城市；洋气"
+    },
+    "シルバー": {
+      "reading": "しるばー",
+      "zh": "银色的；银发"
+    },
+    "スーパーリーグ": {
+      "reading": "すーぱーりーぐ",
+      "zh": "超级联赛"
+    },
+    "すぎ": {
+      "reading": "すぎ",
+      "zh": "过于……（接尾词）"
+    },
+    "すぎる": {
+      "reading": "すぎる",
+      "zh": "过于……；太……"
+    },
+    "すごい": {
+      "reading": "すごい",
+      "zh": "厉害；了不起"
+    },
+    "する": {
+      "reading": "する",
+      "zh": "做（サ变动词）"
+    },
+    "だ": {
+      "reading": "だ",
+      "zh": "是（断定助动词）"
+    },
+    "だから何": {
+      "reading": "だからなに",
+      "zh": "那又怎样"
+    },
+    "だけ": {
+      "reading": "だけ",
+      "zh": "只；仅仅"
+    },
+    "だけど": {
+      "reading": "だけど",
+      "zh": "但是；不过"
+    },
+    "だった": {
+      "reading": "だった",
+      "zh": "是（だ 的过去式）"
+    },
+    "ダメダメ": {
+      "reading": "だめだめ",
+      "zh": "不行不行；很差劲"
+    },
+    "っぽい": {
+      "reading": "っぽい",
+      "zh": "像……样的；有……感的"
+    },
+    "つらくて": {
+      "reading": "つらくて",
+      "zh": "难受得（つらい 的て形）"
+    },
+    "つらすぎる": {
+      "reading": "つらすぎる",
+      "zh": "太难了；太痛苦了"
+    },
+    "デジタルノマド": {
+      "reading": "でじたるのまど",
+      "zh": "数字游民"
+    },
+    "ドーパミンコーデ": {
+      "reading": "どーぱみんこーで",
+      "zh": "多巴胺穿搭"
+    },
+    "という": {
+      "reading": "という",
+      "zh": "叫做……的；所谓的"
+    },
+    "とにかく": {
+      "reading": "とにかく",
+      "zh": "总之；不管怎样"
+    },
+    "な": {
+      "reading": "な",
+      "zh": "（形容动词连体形助词）"
+    },
+    "ない": {
+      "reading": "ない",
+      "zh": "不；没有（否定）"
+    },
+    "ネコ": {
+      "reading": "ねこ",
+      "zh": "猫"
+    },
+    "の": {
+      "reading": "の",
+      "zh": "的（所属助词）"
+    },
+    "は": {
+      "reading": "は",
+      "zh": "（主题助词）"
+    },
+    "ハチミ": {
+      "reading": "はちみ",
+      "zh": "哈基米（蜂蜜，网络用语指小猫）"
+    },
+    "パパ": {
+      "reading": "ぱぱ",
+      "zh": "爸爸"
+    },
+    "パワー": {
+      "reading": "ぱわー",
+      "zh": "力量"
+    },
+    "ピエロ": {
+      "reading": "ぴえろ",
+      "zh": "小丑"
+    },
+    "ぶっちぎり": {
+      "reading": "ぶっちぎり",
+      "zh": "遥遥领先；甩开对手"
+    },
+    "べき": {
+      "reading": "べき",
+      "zh": "应该……"
+    },
+    "ベルサイユ文学": {
+      "reading": "べるさいゆぶんがく",
+      "zh": "凡尔赛文学（炫耀式谦虚）"
+    },
+    "マジ": {
+      "reading": "まじ",
+      "zh": "真的；认真的"
+    },
+    "めかして": {
+      "reading": "めかして",
+      "zh": "带有……味道地"
+    },
+    "メンタル": {
+      "reading": "めんたる",
+      "zh": "心理；精神状态"
+    },
+    "もう": {
+      "reading": "もう",
+      "zh": "已经；再"
+    },
+    "やられる": {
+      "reading": "やられる",
+      "zh": "被搞垮；被击溃"
+    },
+    "やる": {
+      "reading": "やる",
+      "zh": "做；干"
+    },
+    "リード": {
+      "reading": "りーど",
+      "zh": "领先"
+    },
+    "リラックス": {
+      "reading": "りらっくす",
+      "zh": "放松"
+    },
+    "レモン人間": {
+      "reading": "れもんにんげん",
+      "zh": "柠檬人；爱嫉妒的人"
+    },
+    "わきまえない": {
+      "reading": "わきまえない",
+      "zh": "不懂分寸；不知分寸"
+    },
+    "わざわざ": {
+      "reading": "わざわざ",
+      "zh": "特意；专门"
+    },
+    "ワンちゃん": {
+      "reading": "わんちゃん",
+      "zh": "小狗（昵称）"
+    },
+    "を": {
+      "reading": "を",
+      "zh": "（宾格助词）"
+    }
   }
 }
